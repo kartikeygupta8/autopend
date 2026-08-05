@@ -77,15 +77,41 @@
   .item p{color:var(--muted); font-size:0.9rem;}
 
   /* proof / work */
-  .proofgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
-  @media(max-width:780px){.proofgrid{grid-template-columns:1fr;}}
-  .proofcard{background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); border-radius:12px; padding:24px 26px;}
-  .proofcard .kicker{font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--coral);}
+  .proofcard{background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); border-radius:12px; padding:24px 26px; max-width:520px; margin:0 auto;}
+  .proofcard .kicker, .showcase-text .kicker{font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--coral);}
   .proofcard h3{font-size:1.05rem; margin:6px 0 8px;}
   .proofcard p{color:var(--muted); font-size:0.9rem;}
   .proofcard .foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px; padding-top:12px; border-top:1px solid var(--line);}
   .proofcard .foot a{font-weight:700; font-size:0.84rem; color:var(--green);}
   .proofcard .foot span{font-size:0.78rem; color:var(--muted);}
+
+  /* live site showcases */
+  .showcase-row{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:76px;}
+  .showcase-row.reverse .showcase-text{order:2;}
+  .showcase-row.reverse .showcase-visual{order:1;}
+  @media(max-width:880px){
+    .showcase-row{grid-template-columns:1fr; gap:40px; margin-bottom:64px;}
+    .showcase-row.reverse .showcase-text, .showcase-row.reverse .showcase-visual{order:0;}
+  }
+  .showcase-text .kicker{margin-bottom:10px;}
+  .showcase-text h3{font-size:1.35rem; margin-bottom:12px;}
+  .showcase-text p{color:var(--muted); font-size:0.98rem; margin-bottom:18px; max-width:440px;}
+  .showcase-text a.visit{font-weight:700; font-size:0.92rem; color:var(--green); display:inline-flex; align-items:center; gap:6px;}
+  .showcase-text a.visit:hover{color:var(--coral);}
+
+  .showcase-visual{position:relative; padding:0 20px 34px 0;}
+  .browserframe{background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:0 20px 50px rgba(31,75,63,0.14);}
+  .browserframe .topbar{height:30px; background:#F3F1E9; display:flex; align-items:center; gap:6px; padding:0 14px; border-bottom:1px solid var(--line);}
+  .browserframe .topbar span{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .browserframe .topbar span.r{background:#E4572E;}
+  .browserframe .topbar span.y{background:#E6C35C;}
+  .browserframe .topbar span.g{background:#1F4B3F;}
+  .browserframe img{display:block; width:100%; height:auto;}
+
+  .phoneframe{position:absolute; right:-6px; bottom:0; width:118px; background:#1A1D1B; border-radius:20px; padding:6px; box-shadow:0 16px 34px rgba(0,0,0,0.28);}
+  .phoneframe .notch{width:34px; height:5px; background:#000; border-radius:3px; margin:3px auto 5px;}
+  .phoneframe img{display:block; width:100%; border-radius:12px;}
+  @media(max-width:880px){.phoneframe{width:100px; right:6px;}}
 
   /* who its for */
   .whofor{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
@@ -217,31 +243,68 @@
       <h2>Real businesses I've already built this for.</h2>
       <p>Not templates or mockups — live client and independent work.</p>
     </div>
-    <div class="proofgrid">
-      <div class="proofcard">
+    <div class="showcase-row">
+      <div class="showcase-text">
         <div class="kicker">E-commerce</div>
         <h3>Liv'Oh — home decor storefront</h3>
         <p>OTP login, product catalog, cart & checkout, shipping integration, and automatic GST invoicing on every order.</p>
-        <div class="foot"><a href="https://livoh.in" target="_blank">Visit livoh.in ↗</a><span>Live</span></div>
+        <a class="visit" href="https://livoh.in" target="_blank">Visit livoh.in ↗</a>
       </div>
-      <div class="proofcard">
+      <div class="showcase-visual">
+        <div class="browserframe">
+          <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <img src="assets/screenshots/livoh-desktop.jpg" alt="Liv'Oh desktop screenshot" loading="lazy">
+        </div>
+        <div class="phoneframe">
+          <div class="notch"></div>
+          <img src="assets/screenshots/livoh-mobile.png" alt="Liv'Oh mobile screenshot" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase-row reverse">
+      <div class="showcase-text">
         <div class="kicker">D2C brand + ops tool</div>
         <h3>Sunpress Organics</h3>
         <p>Storefront for a cold-pressed mustard oil brand, plus a manufacturing costing tool tracking yield and profitability per pack size.</p>
-        <div class="foot"><a href="https://sunpressorganic.com" target="_blank">Visit sunpressorganic.com ↗</a><span>Live</span></div>
+        <a class="visit" href="https://sunpressorganic.com" target="_blank">Visit sunpressorganic.com ↗</a>
       </div>
-      <div class="proofcard">
-        <div class="kicker">Marketplace</div>
-        <h3>Lex & Ledger</h3>
-        <p>Connects users with verified lawyers and CAs — booking system, WhatsApp notifications, multi-role auth, AI-assisted document processing.</p>
-        <div class="foot"><span>Client project</span><span>Currently offline</span></div>
+      <div class="showcase-visual">
+        <div class="browserframe">
+          <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <img src="assets/screenshots/sunpress-desktop.jpg" alt="Sunpress Organics desktop screenshot" loading="lazy">
+        </div>
+        <div class="phoneframe">
+          <div class="notch"></div>
+          <img src="assets/screenshots/sunpress-mobile.png" alt="Sunpress Organics mobile screenshot" loading="lazy">
+        </div>
       </div>
-      <div class="proofcard">
+    </div>
+
+    <div class="showcase-row">
+      <div class="showcase-text">
         <div class="kicker">Personal build</div>
         <h3>kartikeygupta.co</h3>
         <p>My own engineering portfolio — live-data dashboard mockups and real production case studies, built entirely custom with no templates.</p>
-        <div class="foot"><a href="https://kartikeygupta.co" target="_blank">Visit kartikeygupta.co ↗</a><span>Live</span></div>
+        <a class="visit" href="https://kartikeygupta.co" target="_blank">Visit kartikeygupta.co ↗</a>
       </div>
+      <div class="showcase-visual">
+        <div class="browserframe">
+          <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <img src="assets/screenshots/kartikeygupta-desktop.jpg" alt="kartikeygupta.co desktop screenshot" loading="lazy">
+        </div>
+        <div class="phoneframe">
+          <div class="notch"></div>
+          <img src="assets/screenshots/kartikeygupta-mobile.png" alt="kartikeygupta.co mobile screenshot" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="proofcard">
+      <div class="kicker">Marketplace</div>
+      <h3>Lex & Ledger</h3>
+      <p>Connects users with verified lawyers and CAs — booking system, WhatsApp notifications, multi-role auth, AI-assisted document processing.</p>
+      <div class="foot"><span>Client project</span><span>Currently offline</span></div>
     </div>
   </div>
 </section>
