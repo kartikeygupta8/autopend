@@ -178,7 +178,7 @@
         <button type="submit" class="submitbtn">Claim my free Growth Session →</button>
       </form>
       <div class="trustline">Free, no obligation. I only take a handful of these calls per month.</div>
-      <div class="trustline" style="margin-top:8px; font-weight:600; color:var(--green);">No internet or WhatsApp handy? Give a missed call on <span style="color:var(--coral);">+91-XXXXXXXXXX</span> — I'll call you back.</div>
+      <div class="trustline" style="margin-top:8px; font-weight:600; color:var(--green);">No internet or WhatsApp handy? Give a missed call on <span style="color:var(--coral);">+91 79856 05973</span> — I'll call you back.</div>
     </div>
   </div>
 </header>
@@ -329,7 +329,7 @@
       </div>
       <div class="whocard">
         <div class="tag">Missed call to enter</div>
-        <h3>+91-XXXXXXXXXX</h3>
+        <h3>+91 79856 05973</h3>
         <p style="color:var(--muted); font-size:0.9rem; margin-top:6px;">Works from any basic phone, no internet needed. They give a missed call, you call back and take their details verbally.</p>
       </div>
     </div>
@@ -357,8 +357,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
   const phone = document.getElementById('phone').value;
   const problem = document.getElementById('problem').value;
 
-  // TODO: replace 91XXXXXXXXXX with your WhatsApp number (with country code, no + or spaces)
-  const yourNumber = "91XXXXXXXXXX";
+  const yourNumber = "917985605973";
   const msg = `Hi Kartikey, I'd like to claim my free 30-min Growth Session.%0A%0AName: ${encodeURIComponent(name)}%0ABusiness: ${encodeURIComponent(business)}%0AType: ${encodeURIComponent(type)}%0APhone: ${encodeURIComponent(phone)}%0ABiggest headache: ${encodeURIComponent(problem || 'Not mentioned')}`;
   window.open(`https://wa.me/${yourNumber}?text=${msg}`, '_blank');
 });
