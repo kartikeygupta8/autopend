@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free 30-Minute Growth Session — Kartikey Gupta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF8F3;
+    --ink:#1A1D1B;
+    --muted:#5B645C;
+    --green:#1F4B3F;
+    --green-light:#E7EFE9;
+    --coral:#E4572E;
+    --coral-dark:#C7481F;
+    --line:#E3DFD3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6;}
+  h1,h2,h3{font-family:'Manrope', sans-serif; font-weight:800; letter-spacing:-0.01em; color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  section{padding:80px 0;}
+  @media(max-width:720px){section{padding:52px 0;}}
+
+  nav{border-bottom:1px solid var(--line); background:var(--paper); position:sticky; top:0; z-index:10;}
+  nav .wrap{display:flex; justify-content:space-between; align-items:center; padding:16px 24px;}
+  .brand{font-family:'Manrope'; font-weight:800; font-size:1.05rem;}
+  .navcta{background:var(--green); color:#fff; padding:9px 18px; border-radius:6px; font-weight:600; font-size:0.88rem;}
+
+  /* hero */
+  .hero{padding:64px 0 40px;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;}}
+  .badge{display:inline-flex; align-items:center; gap:8px; background:var(--green-light); color:var(--green); font-weight:600; font-size:0.82rem; padding:8px 14px; border-radius:20px; margin-bottom:22px;}
+  .badge::before{content:'●'; color:var(--coral); font-size:0.6rem;}
+  h1{font-size:clamp(1.9rem, 4.2vw, 2.7rem); line-height:1.14; margin-bottom:18px;}
+  h1 .hl{color:var(--green);}
+  .hero p.sub{color:var(--muted); font-size:1.05rem; max-width:520px; margin-bottom:26px;}
+  .bullets{display:flex; flex-direction:column; gap:12px; margin-bottom:8px;}
+  .bullets div{display:flex; gap:10px; align-items:flex-start; font-size:0.95rem; color:var(--ink);}
+  .bullets div b{color:var(--green); flex-shrink:0;}
+
+  /* form card */
+  .formcard{background:#fff; border:1px solid var(--line); border-radius:14px; padding:32px; box-shadow:0 12px 40px rgba(31,75,63,0.08);}
+  .formcard h3{font-size:1.15rem; margin-bottom:4px;}
+  .formcard .fine{font-size:0.82rem; color:var(--muted); margin-bottom:20px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block; font-size:0.82rem; font-weight:600; margin-bottom:6px;}
+  .field input, .field select{
+    width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:8px; font-family:'Inter'; font-size:0.94rem; background:#fcfcfa;
+  }
+  .field input:focus, .field select:focus{outline:2px solid var(--green); outline-offset:1px;}
+  .submitbtn{
+    width:100%; background:var(--coral); color:#fff; border:none; padding:15px; border-radius:8px;
+    font-weight:700; font-size:1rem; cursor:pointer; margin-top:6px; font-family:'Manrope';
+    transition:background .2s;
+  }
+  .submitbtn:hover{background:var(--coral-dark);}
+  .trustline{font-size:0.78rem; color:var(--muted); text-align:center; margin-top:12px;}
+
+  /* what you get */
+  .sec-head{max-width:600px; margin-bottom:44px;}
+  .eyebrow{font-size:0.82rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
+  .sec-head h2{font-size:clamp(1.5rem,3vw,2rem);}
+  .sec-head p{color:var(--muted); margin-top:12px;}
+
+  .cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media(max-width:800px){.cards3{grid-template-columns:1fr;}}
+  .item{background:#fff; border:1px solid var(--line); border-radius:12px; padding:26px;}
+  .item .ico{width:38px; height:38px; border-radius:8px; background:var(--green-light); color:var(--green); display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:16px;}
+  .item h3{font-size:1.02rem; margin-bottom:8px;}
+  .item p{color:var(--muted); font-size:0.9rem;}
+
+  /* proof / work */
+  .proofgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  @media(max-width:780px){.proofgrid{grid-template-columns:1fr;}}
+  .proofcard{background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); border-radius:12px; padding:24px 26px;}
+  .proofcard .kicker{font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--coral);}
+  .proofcard h3{font-size:1.05rem; margin:6px 0 8px;}
+  .proofcard p{color:var(--muted); font-size:0.9rem;}
+  .proofcard .foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px; padding-top:12px; border-top:1px solid var(--line);}
+  .proofcard .foot a{font-weight:700; font-size:0.84rem; color:var(--green);}
+  .proofcard .foot span{font-size:0.78rem; color:var(--muted);}
+
+  /* who its for */
+  .whofor{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media(max-width:780px){.whofor{grid-template-columns:1fr;}}
+  .whocard{border:1px solid var(--line); border-radius:12px; padding:28px; background:#fff;}
+  .whocard .tag{font-size:0.75rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.05em;}
+  .whocard h3{margin:8px 0 10px; font-size:1.15rem;}
+  .whocard ul{padding-left:18px; color:var(--muted); font-size:0.92rem;}
+  .whocard li{margin-bottom:6px;}
+
+  /* steps */
+  .steps{display:flex; gap:0; counter-reset:step;}
+  @media(max-width:780px){.steps{flex-direction:column;}}
+  .step{flex:1; position:relative; padding:0 20px 0 0;}
+  .step .num{width:34px; height:34px; border-radius:50%; background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Manrope'; margin-bottom:14px;}
+  .step h4{font-size:1rem; margin-bottom:6px;}
+  .step p{color:var(--muted); font-size:0.88rem;}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line); padding:18px 0;}
+  summary{cursor:pointer; font-weight:700; font-family:'Manrope'; font-size:0.98rem; list-style:none; display:flex; justify-content:space-between;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; color:var(--coral); font-size:1.2rem;}
+  details[open] summary::after{content:'–';}
+  details p{color:var(--muted); margin-top:12px; font-size:0.92rem; max-width:640px;}
+
+  /* final cta */
+  .finalcta{background:var(--green); color:#fff; border-radius:16px; padding:52px 40px; text-align:center;}
+  .finalcta h2{color:#fff; font-size:clamp(1.5rem,3vw,2rem); margin-bottom:14px;}
+  .finalcta p{color:#D9E6DF; max-width:480px; margin:0 auto 26px;}
+  .finalcta a.btn{background:var(--coral); color:#fff; padding:15px 30px; border-radius:8px; font-weight:700; font-family:'Manrope'; display:inline-block;}
+
+  footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; color:var(--muted); font-size:0.82rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Kartikey Gupta</div>
+    <a class="navcta" href="#claim">Claim free session</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="badge">Limited free Growth Sessions each month</div>
+      <h1>Get a <span class="hl">free 30-minute Growth Session</span> for your business — before you spend a rupee.</h1>
+      <p class="sub">Submit your details below. I'll personally look at how your business currently runs — your website, orders, billing, or customer follow-up — and get on a free 30-minute call to show you exactly where a simple system or automation would save you time or make you money.</p>
+      <div class="bullets">
+        <div><b>✓</b> No sales pitch — a real look at what's slowing you down</div>
+        <div><b>✓</b> A written action plan you can use even if we never work together</div>
+        <div><b>✓</b> Built by someone who's shipped this for restaurants, shops & startups already</div>
+      </div>
+    </div>
+
+    <div class="formcard" id="claim">
+      <h3>Claim your free Growth Session</h3>
+      <p class="fine">Takes under a minute. I'll reach out on WhatsApp to schedule the call.</p>
+      <form id="leadForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" required placeholder="e.g. Ramesh Gupta">
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" required placeholder="e.g. Gupta Sweets & Namkeen">
+        </div>
+        <div class="field">
+          <label for="type">What kind of business?</label>
+          <select id="type" required>
+            <option value="">Select one</option>
+            <option>Restaurant / café</option>
+            <option>Retail / shop</option>
+            <option>Service business (clinic, salon, agency)</option>
+            <option>Manufacturing / trading</option>
+            <option>Startup / online business</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="phone">WhatsApp number</label>
+          <input type="tel" id="phone" required placeholder="e.g. 98765 43210">
+        </div>
+        <div class="field">
+          <label for="problem">Biggest daily headache right now (optional)</label>
+          <input type="text" id="problem" placeholder="e.g. Too much manual billing">
+        </div>
+        <button type="submit" class="submitbtn">Claim my free Growth Session →</button>
+      </form>
+      <div class="trustline">Free, no obligation. I only take a handful of these calls per month.</div>
+      <div class="trustline" style="margin-top:8px; font-weight:600; color:var(--green);">No internet or WhatsApp handy? Give a missed call on <span style="color:var(--coral);">+91-XXXXXXXXXX</span> — I'll call you back.</div>
+    </div>
+  </div>
+</header>
+
+<section id="get">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What's in the call</div>
+      <h2>What you actually walk away with.</h2>
+      <p>This isn't a sales call disguised as a "free session" — you get real output either way.</p>
+    </div>
+    <div class="cards3">
+      <div class="item">
+        <div class="ico">1</div>
+        <h3>A plain-language audit</h3>
+        <p>Of your current website, ordering process, or billing — where it's costing you time or losing you customers.</p>
+      </div>
+      <div class="item">
+        <div class="ico">2</div>
+        <h3>3 concrete fixes</h3>
+        <p>Specific, doable changes — some you could even implement yourself, no developer required.</p>
+      </div>
+      <div class="item">
+        <div class="ico">3</div>
+        <h3>An honest quote, if relevant</h3>
+        <p>If a website, app, or automation genuinely makes sense for you, I'll quote it — only if it's worth your money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Proof, not promises</div>
+      <h2>Real businesses I've already built this for.</h2>
+      <p>Not templates or mockups — live client and independent work.</p>
+    </div>
+    <div class="proofgrid">
+      <div class="proofcard">
+        <div class="kicker">E-commerce</div>
+        <h3>Liv'Oh — home decor storefront</h3>
+        <p>OTP login, product catalog, cart & checkout, shipping integration, and automatic GST invoicing on every order.</p>
+        <div class="foot"><a href="https://livoh.in" target="_blank">Visit livoh.in ↗</a><span>Live</span></div>
+      </div>
+      <div class="proofcard">
+        <div class="kicker">D2C brand + ops tool</div>
+        <h3>Sunpress Organics</h3>
+        <p>Storefront for a cold-pressed mustard oil brand, plus a manufacturing costing tool tracking yield and profitability per pack size.</p>
+        <div class="foot"><a href="https://sunpressorganic.com" target="_blank">Visit sunpressorganic.com ↗</a><span>Live</span></div>
+      </div>
+      <div class="proofcard">
+        <div class="kicker">Marketplace</div>
+        <h3>Lex & Ledger</h3>
+        <p>Connects users with verified lawyers and CAs — booking system, WhatsApp notifications, multi-role auth, AI-assisted document processing.</p>
+        <div class="foot"><span>Client project</span><span>Currently offline</span></div>
+      </div>
+      <div class="proofcard">
+        <div class="kicker">Personal build</div>
+        <h3>kartikeygupta.co</h3>
+        <p>My own engineering portfolio — live-data dashboard mockups and real production case studies, built entirely custom with no templates.</p>
+        <div class="foot"><a href="https://kartikeygupta.co" target="_blank">Visit kartikeygupta.co ↗</a><span>Live</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="whofor">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Who this is for</div>
+      <h2>Two kinds of businesses book this call.</h2>
+    </div>
+    <div class="whofor">
+      <div class="whocard">
+        <div class="tag">Local business</div>
+        <h3>Restaurants, shops, clinics, services</h3>
+        <ul>
+          <li>Still using paper menus or manual order-taking</li>
+          <li>Sending WhatsApp updates to customers by hand</li>
+          <li>No proper website, or one nobody updates</li>
+        </ul>
+      </div>
+      <div class="whocard">
+        <div class="tag">Startup / remote</div>
+        <h3>Founders & small teams building online</h3>
+        <ul>
+          <li>Need a custom app or internal tool, not another SaaS subscription</li>
+          <li>Want AI/automation built in properly, not bolted on</li>
+          <li>Looking for a full-stack partner without hiring full-time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Three steps, start to finish.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h4>You submit your details</h4><p>Takes under a minute, above.</p></div>
+      <div class="step"><div class="num">2</div><h4>I review your business</h4><p>I look at your current site, process, or menu before we talk — not during.</p></div>
+      <div class="step"><div class="num">3</div><h4>We get on a 30-min call</h4><p>You get the audit and action plan, whether or not we ever work together after.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Questions</div>
+      <h2>Before you submit.</h2>
+    </div>
+    <details open>
+      <summary>Is the Growth Session really free?</summary>
+      <p>Yes. No card, no catch. If there's nothing worth changing, I'll tell you that too.</p>
+    </details>
+    <details>
+      <summary>What if I don't want to build anything after?</summary>
+      <p>That's fine — you keep the audit and action plan either way. There's no pressure or follow-up sales calls.</p>
+    </details>
+    <details>
+      <summary>What actually happens before the Growth Session?</summary>
+      <p>I look at whatever's public — your website, menu, social pages, ordering flow — and ask a couple of quick questions over WhatsApp before the call, so the 30 minutes is useful instead of just introductions.</p>
+    </details>
+    <details>
+      <summary>How many of these do you do a month?</summary>
+      <p>A small number, on purpose — this only works if I can actually go through each business properly.</p>
+    </details>
+  </div>
+</section>
+
+<section id="offline">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">No website? No problem</div>
+      <h2>Know a business with no online presence at all? This works for them too.</h2>
+      <p>Hand them the card, or show them this on your phone — they don't need a website, WhatsApp, or a smartphone to enter.</p>
+    </div>
+    <div class="whofor">
+      <div class="whocard">
+        <div class="tag">Scan to enter</div>
+        <h3>QR code for shop counters &amp; flyers</h3>
+        <p style="color:var(--muted); font-size:0.9rem; margin-top:6px;">Print this on a visiting card, table tent, or poster — scanning brings them straight to this page. See the printable flyer version below.</p>
+      </div>
+      <div class="whocard">
+        <div class="tag">Missed call to enter</div>
+        <h3>+91-XXXXXXXXXX</h3>
+        <p style="color:var(--muted); font-size:0.9rem; margin-top:6px;">Works from any basic phone, no internet needed. They give a missed call, you call back and take their details verbally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="finalcta">
+      <h2>A free Growth Session for your business — 30 minutes, no cost.</h2>
+      <p>No pitch. No obligation. Just a clear look at where a system would save you time.</p>
+      <a class="btn" href="#claim">Claim my free Growth Session →</a>
+    </div>
+  </div>
+</section>
+
+<footer>Kartikey Gupta — Full-stack development, business apps & automation · kartikeygupta8@gmail.com</footer>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const business = document.getElementById('business').value;
+  const type = document.getElementById('type').value;
+  const phone = document.getElementById('phone').value;
+  const problem = document.getElementById('problem').value;
+
+  // TODO: replace 91XXXXXXXXXX with your WhatsApp number (with country code, no + or spaces)
+  const yourNumber = "91XXXXXXXXXX";
+  const msg = `Hi Kartikey, I'd like to claim my free 30-min Growth Session.%0A%0AName: ${encodeURIComponent(name)}%0ABusiness: ${encodeURIComponent(business)}%0AType: ${encodeURIComponent(type)}%0APhone: ${encodeURIComponent(phone)}%0ABiggest headache: ${encodeURIComponent(problem || 'Not mentioned')}`;
+  window.open(`https://wa.me/${yourNumber}?text=${msg}`, '_blank');
+});
+</script>
+
+</body>
+</html>
