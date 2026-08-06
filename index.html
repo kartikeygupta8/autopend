@@ -4,9 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free 30-Minute Growth Session — Kartikey Gupta</title>
+<meta name="description" content="Get a free 30-minute Growth Session for your business. A plain-language audit of your website, ordering, or billing, 3 concrete fixes, and an honest quote — no obligation.">
+<meta property="og:title" content="Free 30-Minute Growth Session — Kartikey Gupta">
+<meta property="og:description" content="A free 30-minute call to find where a simple system or automation would save you time or make you money — no sales pitch, no obligation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F4B3F'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='bold' fill='%23FAF8F3' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   :root{
     --paper:#FAF8F3;
@@ -63,6 +69,14 @@
   .submitbtn:hover{background:var(--coral-dark);}
   .trustline{font-size:0.78rem; color:var(--muted); text-align:center; margin-top:12px;}
 
+  .or-divider{display:flex; align-items:center; gap:12px; margin:16px 0; color:var(--muted); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em;}
+  .or-divider::before, .or-divider::after{content:''; flex:1; height:1px; background:var(--line);}
+  .calendlybtn{
+    display:block; width:100%; text-align:center; background:#fff; color:var(--green); border:1.5px solid var(--green);
+    padding:13px; border-radius:8px; font-weight:700; font-size:0.95rem; font-family:'Manrope'; transition:background .2s, color .2s;
+  }
+  .calendlybtn:hover{background:var(--green); color:#fff;}
+
   /* what you get */
   .sec-head{max-width:600px; margin-bottom:44px;}
   .eyebrow{font-size:0.82rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
@@ -77,13 +91,7 @@
   .item p{color:var(--muted); font-size:0.9rem;}
 
   /* proof / work */
-  .proofcard{background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); border-radius:12px; padding:24px 26px; max-width:520px; margin:0 auto;}
-  .proofcard .kicker, .showcase-text .kicker{font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--coral);}
-  .proofcard h3{font-size:1.05rem; margin:6px 0 8px;}
-  .proofcard p{color:var(--muted); font-size:0.9rem;}
-  .proofcard .foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px; padding-top:12px; border-top:1px solid var(--line);}
-  .proofcard .foot a{font-weight:700; font-size:0.84rem; color:var(--green);}
-  .proofcard .foot span{font-size:0.78rem; color:var(--muted);}
+  .showcase-text .kicker{font-size:0.74rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--coral);}
 
   /* live site showcases */
   .showcase-row{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:76px;}
@@ -99,8 +107,8 @@
   .showcase-text a.visit{font-weight:700; font-size:0.92rem; color:var(--green); display:inline-flex; align-items:center; gap:6px;}
   .showcase-text a.visit:hover{color:var(--coral);}
 
-  .showcase-visual{position:relative; padding:0 20px 34px 0;}
-  .browserframe{background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:0 20px 50px rgba(31,75,63,0.14);}
+  a.showcase-visual{position:relative; display:block; padding:0 20px 34px 0; cursor:pointer;}
+  .browserframe{background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:0 20px 50px rgba(31,75,63,0.14); transition:box-shadow .25s, transform .25s;}
   .browserframe .topbar{height:30px; background:#F3F1E9; display:flex; align-items:center; gap:6px; padding:0 14px; border-bottom:1px solid var(--line);}
   .browserframe .topbar span{width:9px; height:9px; border-radius:50%; display:inline-block;}
   .browserframe .topbar span.r{background:#E4572E;}
@@ -108,10 +116,15 @@
   .browserframe .topbar span.g{background:#1F4B3F;}
   .browserframe img{display:block; width:100%; height:auto;}
 
-  .phoneframe{position:absolute; right:-6px; bottom:0; width:118px; background:#1A1D1B; border-radius:20px; padding:6px; box-shadow:0 16px 34px rgba(0,0,0,0.28);}
+  .phoneframe{position:absolute; right:-6px; bottom:0; width:118px; background:#1A1D1B; border-radius:20px; padding:6px; box-shadow:0 16px 34px rgba(0,0,0,0.28); transition:box-shadow .25s, transform .25s;}
   .phoneframe .notch{width:34px; height:5px; background:#000; border-radius:3px; margin:3px auto 5px;}
   .phoneframe img{display:block; width:100%; border-radius:12px;}
   @media(max-width:880px){.phoneframe{width:100px; right:6px;}}
+
+  a.showcase-visual:hover .browserframe{box-shadow:0 26px 60px rgba(31,75,63,0.2); transform:translateY(-3px);}
+  a.showcase-visual:hover .phoneframe{box-shadow:0 20px 40px rgba(0,0,0,0.34); transform:translateY(-3px);}
+  .showcase-visual .visit-hint{position:absolute; top:14px; left:14px; background:rgba(26,29,27,0.82); color:#fff; font-size:0.72rem; font-weight:700; padding:6px 12px; border-radius:20px; opacity:0; transform:translateY(-4px); transition:opacity .2s, transform .2s; pointer-events:none;}
+  a.showcase-visual:hover .visit-hint{opacity:1; transform:translateY(0);}
 
   /* who its for */
   .whofor{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
@@ -145,6 +158,23 @@
   .finalcta a.btn{background:var(--coral); color:#fff; padding:15px 30px; border-radius:8px; font-weight:700; font-family:'Manrope'; display:inline-block;}
 
   footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; color:var(--muted); font-size:0.82rem;}
+
+  /* sticky mobile CTA */
+  .stickycta{display:none;}
+  @media(max-width:720px){
+    .stickycta{
+      display:flex; position:fixed; left:0; right:0; bottom:0; z-index:20;
+      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background:var(--paper); border-top:1px solid var(--line); box-shadow:0 -8px 24px rgba(0,0,0,0.08);
+      transform:translateY(100%); transition:transform .25s ease;
+    }
+    .stickycta.show{transform:translateY(0);}
+    .stickycta a{
+      flex:1; text-align:center; background:var(--coral); color:#fff; padding:13px; border-radius:8px;
+      font-weight:700; font-family:'Manrope'; font-size:0.95rem;
+    }
+    body{padding-bottom:0;}
+  }
 </style>
 </head>
 <body>
@@ -203,8 +233,10 @@
         </div>
         <button type="submit" class="submitbtn">Claim my free Growth Session →</button>
       </form>
+      <div class="or-divider"><span>or</span></div>
+      <a href="https://calendly.com/kartikeygupta8/review-meeting" class="calendlybtn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kartikeygupta8/review-meeting'}); return false;">📅 Pick a time on my calendar →</a>
       <div class="trustline">Free, no obligation. I only take a handful of these calls per month.</div>
-      <div class="trustline" style="margin-top:8px; font-weight:600; color:var(--green);">No internet or WhatsApp handy? Give a missed call on <span style="color:var(--coral);">+91 79856 05973</span> — I'll call you back.</div>
+      <div class="trustline" style="margin-top:8px; font-weight:600; color:var(--green);">No internet or WhatsApp handy? Give a missed call on <a href="tel:+917985605973" style="color:var(--coral);">+91 79856 05973</a> — I'll call you back.</div>
     </div>
   </div>
 </header>
@@ -250,16 +282,17 @@
         <p>OTP login, product catalog, cart & checkout, shipping integration, and automatic GST invoicing on every order.</p>
         <a class="visit" href="https://livoh.in" target="_blank">Visit livoh.in ↗</a>
       </div>
-      <div class="showcase-visual">
+      <a class="showcase-visual" href="https://livoh.in" target="_blank" rel="noopener" aria-label="Visit livoh.in">
+        <span class="visit-hint">Visit live site ↗</span>
         <div class="browserframe">
           <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-          <img src="assets/screenshots/livoh-desktop.jpg" alt="Liv'Oh desktop screenshot" loading="lazy">
+          <img src="assets/screenshots/livoh-desktop.jpg" alt="Liv'Oh product listing page, desktop view" loading="lazy">
         </div>
         <div class="phoneframe">
           <div class="notch"></div>
-          <img src="assets/screenshots/livoh-mobile.png" alt="Liv'Oh mobile screenshot" loading="lazy">
+          <img src="assets/screenshots/livoh-mobile.png" alt="Liv'Oh product detail page, mobile view" loading="lazy">
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="showcase-row reverse">
@@ -269,16 +302,17 @@
         <p>Storefront for a cold-pressed mustard oil brand, plus a manufacturing costing tool tracking yield and profitability per pack size.</p>
         <a class="visit" href="https://sunpressorganic.com" target="_blank">Visit sunpressorganic.com ↗</a>
       </div>
-      <div class="showcase-visual">
+      <a class="showcase-visual" href="https://sunpressorganic.com" target="_blank" rel="noopener" aria-label="Visit sunpressorganic.com">
+        <span class="visit-hint">Visit live site ↗</span>
         <div class="browserframe">
           <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-          <img src="assets/screenshots/sunpress-desktop.jpg" alt="Sunpress Organics desktop screenshot" loading="lazy">
+          <img src="assets/screenshots/sunpress-desktop.jpg" alt="Sunpress Organics homepage, desktop view" loading="lazy">
         </div>
         <div class="phoneframe">
           <div class="notch"></div>
-          <img src="assets/screenshots/sunpress-mobile.png" alt="Sunpress Organics mobile screenshot" loading="lazy">
+          <img src="assets/screenshots/sunpress-mobile.png" alt="Sunpress Organics products page, mobile view" loading="lazy">
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="showcase-row">
@@ -288,23 +322,37 @@
         <p>My own engineering portfolio — live-data dashboard mockups and real production case studies, built entirely custom with no templates.</p>
         <a class="visit" href="https://kartikeygupta.co" target="_blank">Visit kartikeygupta.co ↗</a>
       </div>
-      <div class="showcase-visual">
+      <a class="showcase-visual" href="https://kartikeygupta.co" target="_blank" rel="noopener" aria-label="Visit kartikeygupta.co">
+        <span class="visit-hint">Visit live site ↗</span>
         <div class="browserframe">
           <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-          <img src="assets/screenshots/kartikeygupta-desktop.jpg" alt="kartikeygupta.co desktop screenshot" loading="lazy">
+          <img src="assets/screenshots/kartikeygupta-desktop.jpg" alt="kartikeygupta.co homepage, desktop view" loading="lazy">
         </div>
         <div class="phoneframe">
           <div class="notch"></div>
-          <img src="assets/screenshots/kartikeygupta-mobile.png" alt="kartikeygupta.co mobile screenshot" loading="lazy">
+          <img src="assets/screenshots/kartikeygupta-mobile.png" alt="kartikeygupta.co selected work section, mobile view" loading="lazy">
         </div>
-      </div>
+      </a>
     </div>
 
-    <div class="proofcard">
-      <div class="kicker">Marketplace</div>
-      <h3>Lex & Ledger</h3>
-      <p>Connects users with verified lawyers and CAs — booking system, WhatsApp notifications, multi-role auth, AI-assisted document processing.</p>
-      <div class="foot"><span>Client project</span><span>Currently offline</span></div>
+    <div class="showcase-row reverse">
+      <div class="showcase-text">
+        <div class="kicker">Marketplace</div>
+        <h3>Lex & Ledger</h3>
+        <p>Connects users with verified lawyers and CAs — booking system, WhatsApp notifications, multi-role auth, AI-assisted document processing.</p>
+        <a class="visit" href="https://lexandledger.in" target="_blank">Visit lexandledger.in ↗</a>
+      </div>
+      <a class="showcase-visual" href="https://lexandledger.in" target="_blank" rel="noopener" aria-label="Visit lexandledger.in">
+        <span class="visit-hint">Visit live site ↗</span>
+        <div class="browserframe">
+          <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <img src="assets/screenshots/lexandledger-desktop.jpg" alt="Lex & Ledger homepage, desktop view" loading="lazy">
+        </div>
+        <div class="phoneframe">
+          <div class="notch"></div>
+          <img src="assets/screenshots/lexandledger-mobile.png" alt="Lex & Ledger services page, mobile view" loading="lazy">
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -392,7 +440,7 @@
       </div>
       <div class="whocard">
         <div class="tag">Missed call to enter</div>
-        <h3>+91 79856 05973</h3>
+        <h3><a href="tel:+917985605973" style="color:inherit;">+91 79856 05973</a></h3>
         <p style="color:var(--muted); font-size:0.9rem; margin-top:6px;">Works from any basic phone, no internet needed. They give a missed call, you call back and take their details verbally.</p>
       </div>
     </div>
@@ -409,7 +457,13 @@
   </div>
 </section>
 
-<footer>Kartikey Gupta — Full-stack development, business apps & automation · kartikeygupta8@gmail.com</footer>
+<footer>Kartikey Gupta — Full-stack development, business apps & automation · <a href="mailto:kartikeygupta8@gmail.com" style="color:inherit;">kartikeygupta8@gmail.com</a></footer>
+
+<div class="stickycta" id="stickyCta">
+  <a href="#claim">Claim my free Growth Session →</a>
+</div>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <script>
 document.getElementById('leadForm').addEventListener('submit', function(e){
@@ -424,6 +478,13 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
   const msg = `Hi Kartikey, I'd like to claim my free 30-min Growth Session.%0A%0AName: ${encodeURIComponent(name)}%0ABusiness: ${encodeURIComponent(business)}%0AType: ${encodeURIComponent(type)}%0APhone: ${encodeURIComponent(phone)}%0ABiggest headache: ${encodeURIComponent(problem || 'Not mentioned')}`;
   window.open(`https://wa.me/${yourNumber}?text=${msg}`, '_blank');
 });
+
+const stickyCta = document.getElementById('stickyCta');
+const claimForm = document.getElementById('claim');
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => stickyCta.classList.toggle('show', !entry.isIntersecting));
+}, { threshold: 0 });
+heroObserver.observe(claimForm);
 </script>
 
 </body>
