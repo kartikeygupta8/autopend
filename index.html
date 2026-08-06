@@ -46,10 +46,23 @@
   .badge::before{content:'●'; color:var(--coral); font-size:0.6rem;}
   h1{font-size:clamp(1.9rem, 4.2vw, 2.7rem); line-height:1.14; margin-bottom:18px;}
   h1 .hl{color:var(--green);}
-  .hero p.sub{color:var(--muted); font-size:1.05rem; max-width:520px; margin-bottom:26px;}
-  .bullets{display:flex; flex-direction:column; gap:12px; margin-bottom:8px;}
-  .bullets div{display:flex; gap:10px; align-items:flex-start; font-size:0.95rem; color:var(--ink);}
+  .hero p.sub{color:var(--muted); font-size:1.05rem; max-width:520px; margin-bottom:20px;}
+  .bullets{display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:8px;}
+  .bullets div{display:flex; gap:6px; align-items:center; font-size:0.88rem; color:var(--ink); white-space:nowrap;}
   .bullets div b{color:var(--green); flex-shrink:0;}
+
+  .mobile-hero-cta{display:none;}
+  @media(max-width:880px){
+    .hero{padding:32px 0 24px;}
+    .badge{margin-bottom:14px;}
+    h1{margin-bottom:12px;}
+    .hero p.sub{margin-bottom:14px;}
+    .mobile-hero-cta{
+      display:block; text-align:center; background:var(--coral); color:#fff; padding:14px; border-radius:8px;
+      font-weight:700; font-family:'Manrope'; font-size:0.98rem; margin-top:16px;
+      box-shadow:0 10px 26px rgba(228,87,46,0.25);
+    }
+  }
 
   /* form card */
   .formcard{background:#fff; border:1px solid var(--line); border-radius:14px; padding:32px; box-shadow:0 12px 40px rgba(31,75,63,0.08);}
@@ -191,45 +204,26 @@
     <div>
       <div class="badge">Limited free Growth Sessions each month</div>
       <h1>Get a <span class="hl">free 30-minute Growth Session</span> for your business — before you spend a rupee.</h1>
-      <p class="sub">Submit your details below. I'll personally look at how your business currently runs — your website, orders, billing, or customer follow-up — and get on a free 30-minute call to show you exactly where a simple system or automation would save you time or make you money.</p>
+      <p class="sub">I'll personally review your website, orders, or billing and show you on a free call exactly where a simple system would save you time or money.</p>
       <div class="bullets">
-        <div><b>✓</b> No sales pitch — a real look at what's slowing you down</div>
-        <div><b>✓</b> A written action plan you can use even if we never work together</div>
-        <div><b>✓</b> Built by someone who's shipped this for restaurants, shops & startups already</div>
+        <div><b>✓</b> No sales pitch</div>
+        <div><b>✓</b> Free action plan</div>
+        <div><b>✓</b> Shipped for real businesses already</div>
       </div>
+      <a href="#claim" class="mobile-hero-cta">Claim my free Growth Session →</a>
     </div>
 
     <div class="formcard" id="claim">
       <h3>Claim your free Growth Session</h3>
-      <p class="fine">Takes under a minute. I'll reach out on WhatsApp to schedule the call.</p>
+      <p class="fine">Takes 10 seconds. I'll reach out on WhatsApp with a couple of quick questions and schedule the call.</p>
       <form id="leadForm">
         <div class="field">
           <label for="name">Your name</label>
           <input type="text" id="name" required placeholder="e.g. Ramesh Gupta">
         </div>
         <div class="field">
-          <label for="business">Business name</label>
-          <input type="text" id="business" required placeholder="e.g. Gupta Sweets & Namkeen">
-        </div>
-        <div class="field">
-          <label for="type">What kind of business?</label>
-          <select id="type" required>
-            <option value="">Select one</option>
-            <option>Restaurant / café</option>
-            <option>Retail / shop</option>
-            <option>Service business (clinic, salon, agency)</option>
-            <option>Manufacturing / trading</option>
-            <option>Startup / online business</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field">
           <label for="phone">WhatsApp number</label>
           <input type="tel" id="phone" required placeholder="e.g. 98765 43210">
-        </div>
-        <div class="field">
-          <label for="problem">Biggest daily headache right now (optional)</label>
-          <input type="text" id="problem" placeholder="e.g. Too much manual billing">
         </div>
         <button type="submit" class="submitbtn">Claim my free Growth Session →</button>
       </form>
@@ -468,13 +462,10 @@
 document.getElementById('leadForm').addEventListener('submit', function(e){
   e.preventDefault();
   const name = document.getElementById('name').value;
-  const business = document.getElementById('business').value;
-  const type = document.getElementById('type').value;
   const phone = document.getElementById('phone').value;
-  const problem = document.getElementById('problem').value;
 
   const yourNumber = "917985605973";
-  const msg = `Hi Kartikey, I'd like to claim my free 30-min Growth Session.%0A%0AName: ${encodeURIComponent(name)}%0ABusiness: ${encodeURIComponent(business)}%0AType: ${encodeURIComponent(type)}%0APhone: ${encodeURIComponent(phone)}%0ABiggest headache: ${encodeURIComponent(problem || 'Not mentioned')}`;
+  const msg = `Hi Kartikey, I'd like to claim my free 30-min Growth Session.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}`;
   window.open(`https://wa.me/${yourNumber}?text=${msg}`, '_blank');
 });
 
