@@ -59,7 +59,7 @@
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
 a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 28px}
-.nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:rgba(247,248,250,.94);gap:16px}
+.nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:rgba(247,248,250,.94);gap:16px;position:sticky;top:0;z-index:50}
 .logo{font:800 21px Manrope;letter-spacing:-.7px;white-space:nowrap}.logo i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-left:5px}
 .navlinks{display:flex;gap:25px;color:#475467;font-size:13px}.navlinks a:hover{color:var(--ink)}.navlinks a.switch{color:var(--blue);font-weight:700}
 .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:13px 19px;font-size:13px;font-weight:700;transition:.2s}
@@ -80,13 +80,12 @@ h1,h2,h3{font-family:Manrope,Arial,sans-serif;letter-spacing:-.055em;margin:0}
 .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:25px;min-height:200px}.card .num{font:800 11px Manrope;color:#98a2b3}.card h3{font-size:22px;margin:43px 0 9px}.card p{color:var(--slate);line-height:1.55;font-size:13px;margin:0}
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.service{background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px}.service b{font:800 10px Manrope;color:var(--blue)}.service h3{font-size:20px;margin:34px 0 8px}.service p{color:var(--slate);font-size:13px;line-height:1.55;margin:0}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.step{background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px}.step strong{font-size:9px;letter-spacing:1px;color:#667085}.step h3{font-size:21px;margin:41px 0 9px}.step p{color:var(--slate);font-size:13px;line-height:1.55;margin:0}
-.risk{display:grid;grid-template-columns:1fr 1fr;gap:12px}.riskcard{border:1px solid var(--line);border-radius:20px;background:#fff;padding:26px}.riskcard h3{font-size:22px;margin-bottom:10px}.riskcard p{color:var(--slate);font-size:13px;line-height:1.6}.risklist{display:grid;gap:11px}.risklist div{display:flex;gap:10px;font-size:13px;line-height:1.45}.risklist i{width:20px;height:20px;border-radius:50%;background:var(--blue2);color:var(--blue);display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;flex:none}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.about h2{font-size:clamp(40px,5vw,65px)}.about p{font-size:20px;line-height:1.6;margin:0;color:#d3d9e2}.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:27px}.stat{border:1px solid #344054;border-radius:99px;padding:8px 11px;font-size:10px;color:#aab3c2}
 .faq{max-width:900px}.faq h2{font-size:57px;margin-bottom:29px}.faq details{border-top:1px solid var(--line);padding:21px 0}.faq summary{font:700 17px Manrope;cursor:pointer}.faq p{color:var(--slate);font-size:13px;line-height:1.6;max-width:750px}
 .final{padding:25px 0 90px}.finalbox{background:var(--navy);color:#fff;border-radius:29px;padding:48px;display:grid;grid-template-columns:1fr .75fr;gap:50px;align-items:center}.finalbox h2{font-size:clamp(43px,5vw,67px);line-height:.96}.finalbox p{color:#aab3c2;line-height:1.6;max-width:500px}.finalbox .btn{margin-top:10px}
 footer{background:var(--navy);border-top:1px solid #283244;color:#fff;padding:31px 0}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.foot small{color:#98a2b3;font-size:10px}.switch{margin-top:9px;color:var(--lime);font-size:10px;font-weight:700;display:inline-block}.sticky{display:none}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-@media(max-width:900px){.navlinks{display:none}.hero,.risk,.finalbox,.about{grid-template-columns:1fr}.hero{padding-top:55px}.trustbar-inner,.outcomes,.services,.steps{grid-template-columns:1fr 1fr}.head{display:block}.intro{margin-top:18px}.pain{display:block}}
+@media(max-width:900px){.navlinks{display:none}.hero,.finalbox,.about{grid-template-columns:1fr}.hero{padding-top:55px}.trustbar-inner,.outcomes,.services,.steps{grid-template-columns:1fr 1fr}.head{display:block}.intro{margin-top:18px}.pain{display:block}}
 @media(max-width:600px){.wrap{padding:0 18px}.hero h1{font-size:56px}.lead{font-size:16px}.section{padding:68px 0}.trustbar-inner,.outcomes,.services,.steps{grid-template-columns:1fr}.trustitem{border-right:0;border-bottom:1px solid var(--line);padding:10px 0}.trustitem:last-child{border:0}.finalbox{padding:30px}.faq h2{font-size:48px}.foot{display:block}.sticky{display:block;position:fixed;bottom:0;left:0;right:0;padding:10px 14px;background:var(--navy);z-index:30}.sticky .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -112,6 +111,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       <span><i class="check">✓</i> Clear scope and quote based on your actual needs</span>
       <span><i class="check">✓</i> 7+ years building for real businesses</span>
     </div>
+    <p style="margin-top:18px;font-size:12px;color:#475467">Prefer WhatsApp? <a href="https://wa.me/917985605973" style="color:var(--blue);font-weight:700">Message us directly &#8594;</a></p>
   </div>
 
   <aside class="booking-card" id="book">
@@ -119,6 +119,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <h2>Choose a time. We'll take it from there.</h2>
     <p>30 minutes, online, no obligation. Tell us what you do and we'll help you work out what your website actually needs.</p>
     <div class="cal-wrap"><div class="calendly-inline-widget" data-url="https://calendly.com/kartikeygupta8/review-meeting" style="min-width:280px;height:590px"></div></div>
+    <p style="margin-top:10px;font-size:10px;color:#98a2b3;text-align:center">Calendar not loading? <a href="https://calendly.com/kartikeygupta8/review-meeting" target="_blank" rel="noopener" style="color:var(--lime);font-weight:700">Open it directly &#8594;</a></p>
   </aside>
 </section>
 
@@ -187,21 +188,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 </div>
 </section>
 
-<!-- VALUE -->
-<section class="section bluebg">
-<div class="wrap">
-  <div class="head"><div><div class="eyebrow">What you actually get</div><h2>A proper digital presence — not just another website.</h2></div></div>
-  <div class="outcomes">
-    <div class="card"><span class="num">L</span><h3>Look professional</h3><p>Make a stronger first impression when someone searches for your business.</p></div>
-    <div class="card"><span class="num">S</span><h3>Showcase what you offer</h3><p>Present your products, services and capabilities clearly.</p></div>
-    <div class="card"><span class="num">E</span><h3>Get more enquiries</h3><p>Give interested customers a simple, obvious next step.</p></div>
-    <div class="card"><span class="num">F</span><h3>Be found online</h3><p>Create a proper foundation for online discovery.</p></div>
-    <div class="card"><span class="num">T</span><h3>Build trust</h3><p>Show customers that your business is established and legitimate.</p></div>
-    <div class="card"><span class="num">U</span><h3>Stay updated</h3><p>Keep the website current as your business changes and grows.</p></div>
-  </div>
-</div>
-</section>
-
 <!-- SERVICES -->
 <section class="section" id="services">
 <div class="wrap"><div class="head"><div><div class="eyebrow">What we build</div><h2>Built around your business — not around a fixed package.</h2></div><p class="intro">We recommend the pages, features and integrations that make sense for your actual customers and operation.</p></div>
@@ -213,23 +199,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <div class="service"><b>W / 05</b><h3>Website support</h3><p>Ongoing technical maintenance and support after launch.</p></div>
 <div class="service"><b>C / 06</b><h3>Custom development</h3><p>Unique digital experiences when a template isn't the right answer.</p></div>
 </div></div>
-</section>
-
-<!-- RISK REVERSAL -->
-<section class="section">
-<div class="wrap">
-  <div class="head"><div><div class="eyebrow">Before you spend anything</div><h2>Know exactly what happens to your project.</h2></div><p class="intro">The consultation exists to reduce uncertainty — not to pressure you into a package.</p></div>
-  <div class="risk">
-    <div class="riskcard"><h3>A clear project path</h3><div class="risklist">
-      <div><i>✓</i><span>Consultation before any quote</span></div>
-      <div><i>✓</i><span>Scope agreed before development</span></div>
-      <div><i>✓</i><span>Clear proposal based on your actual needs</span></div>
-      <div><i>✓</i><span>Design and development around your business</span></div>
-      <div><i>✓</i><span>Launch and post-launch support available</span></div>
-    </div></div>
-    <div class="riskcard"><h3>No unnecessary complexity</h3><p>We don't sell fixed packages or features you don't need. You explain the business. We translate that into the right website. If we don't think a website is the right answer, we'll tell you during the consultation.</p><a class="btn white" href="#book">Talk it through ↗</a></div>
-  </div>
-</div>
 </section>
 
 <!-- PROCESS -->
@@ -249,7 +218,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section class="section dark" id="about">
 <div class="wrap about">
   <div><div class="eyebrow">About WebSathi</div><h2>People building websites for businesses — not an anonymous agency.</h2></div>
-  <div><p>WebSathi exists because most small and medium Indian businesses don't need a giant agency. They need someone who understands their business and builds a proper website without making the process complicated.</p><div class="stats"><span class="stat">7+ years complete web development</span><span class="stat">India-wide</span><span class="stat">Free consultation before any quote</span></div></div>
+  <div><p>WebSathi exists because most small and medium Indian businesses don't need a giant agency. They need someone who understands their business and builds a proper website without making the process complicated.</p><div class="stats"><span class="stat">7+ years complete web development</span><span class="stat">India-wide</span><span class="stat">Free consultation before any quote</span></div><p style="margin-top:18px;font-size:12px;color:#98a2b3">Built and run by <a href="https://kartikeygupta.co" target="_blank" rel="noopener" style="color:var(--lime);font-weight:700">Kartikey Gupta</a> &mdash; full-stack developer, 7+ years.</p></div>
 </div>
 </section>
 
