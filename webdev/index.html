@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WebSathi — Professional Websites for Growing Businesses</title>
-<meta name="description" content="WebSathi builds professional websites for established Indian businesses. Free consultation first. Clear scope and quote after.">
+<title>WebSathi — Professional Websites for Indian Businesses | Free Consultation</title>
+<meta name="description" content="WebSathi builds professional websites for established Indian businesses — manufacturers, distributors, retailers, service businesses. Free consultation first, clear quote after.">
 <meta name="robots" content="index, follow">
+<meta name="geo.region" content="IN">
 <!-- TODO: confirm production domain and update canonical + OG/Twitter URLs below before launch -->
 <link rel="canonical" href="https://autopend.in/webdev/">
 <meta name="theme-color" content="#0b1220">
@@ -16,6 +17,7 @@
 <meta property="og:description" content="WebSathi builds professional websites for established Indian businesses. Free consultation first. Clear scope and quote after.">
 <meta property="og:url" content="https://autopend.in/webdev/">
 <meta property="og:image" content="https://autopend.in/assets/screenshots/livoh-desktop.jpg">
+<meta property="og:locale" content="en_IN">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WebSathi — Professional Websites for Growing Businesses">
@@ -31,8 +33,10 @@
   "name": "WebSathi",
   "url": "https://autopend.in/webdev/",
   "description": "WebSathi builds professional websites for established Indian businesses, starting with a free consultation before any quote.",
-  "areaServed": "IN",
+  "areaServed": { "@type": "Country", "name": "India" },
   "email": "mailto:kartikeygupta8@gmail.com",
+  "telephone": "+91-79856-05973",
+  "founder": { "@type": "Person", "name": "Kartikey Gupta", "url": "https://kartikeygupta.co" },
   "sameAs": []
 }
 </script>
@@ -42,8 +46,35 @@
   "@type": "Service",
   "serviceType": "Website Development",
   "provider": { "@type": "Organization", "name": "WebSathi" },
-  "areaServed": "IN",
-  "description": "Professional website development and ongoing maintenance for Indian businesses, scoped after a free consultation."
+  "areaServed": { "@type": "Country", "name": "India" },
+  "description": "Professional website development and ongoing maintenance for Indian businesses, scoped after a free consultation.",
+  "offers": { "@type": "Offer", "name": "Free 30-minute website consultation", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autopend.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Web Development", "item": "https://autopend.in/webdev/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much does a website cost?", "acceptedAnswer": { "@type": "Answer", "text": "Every website is different. We first understand your requirements in the free consultation, then provide a clear quote based on the agreed scope." } },
+    { "@type": "Question", "name": "How long does it take?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on scope, content and functionality. We'll give you a realistic timeline after understanding the project." } },
+    { "@type": "Question", "name": "Do I need to know anything technical?", "acceptedAnswer": { "@type": "Answer", "text": "No. You know your business. We handle the technical side and explain decisions in plain language." } },
+    { "@type": "Question", "name": "Can you build an e-commerce website?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can build the storefront, checkout, payments, shipping and business features your operation needs." } },
+    { "@type": "Question", "name": "Can you update my website after launch?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ongoing technical maintenance and support are available after launch." } },
+    { "@type": "Question", "name": "Do you work outside my city?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with businesses across India remotely." } },
+    { "@type": "Question", "name": "What if I don't actually need a website?", "acceptedAnswer": { "@type": "Answer", "text": "We'll tell you during the consultation. The point of the call is to figure out what genuinely makes sense for your business." } },
+    { "@type": "Question", "name": "Do you build automation or internal tools too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, through our AutoPend business automation service at autopend.in/automation/, if repetitive manual work is the bigger problem." } }
+  ]
 }
 </script>
 
@@ -60,7 +91,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
 a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 28px}
 .nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:rgba(247,248,250,.94);gap:16px;position:sticky;top:0;z-index:50}
-.logo{font:800 21px Manrope;letter-spacing:-.7px;white-space:nowrap}.logo i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-left:5px}
+.logo{font:800 21px Manrope;letter-spacing:-.7px;white-space:nowrap}.logo i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-left:5px}.logo .sub{color:var(--slate);font-weight:700}.logo .sep{color:#cbd2d9;font-weight:400;margin:0 8px}
 .navlinks{display:flex;gap:25px;color:#475467;font-size:13px}.navlinks a:hover{color:var(--ink)}.navlinks a.switch{color:var(--blue);font-weight:700}
 .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:13px 19px;font-size:13px;font-weight:700;transition:.2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(11,18,32,.13)}.btn.blue{background:var(--blue);border-color:var(--blue)}.btn.lime{background:var(--lime);color:var(--ink)}.btn.white{background:#fff;color:var(--ink)}
@@ -86,14 +117,32 @@ h1,h2,h3{font-family:Manrope,Arial,sans-serif;letter-spacing:-.055em;margin:0}
 footer{background:var(--navy);border-top:1px solid #283244;color:#fff;padding:31px 0}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.foot small{color:#98a2b3;font-size:10px}.switch{margin-top:9px;color:var(--lime);font-size:10px;font-weight:700;display:inline-block}.sticky{display:none}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 @media(max-width:900px){.navlinks{display:none}.hero,.finalbox,.about{grid-template-columns:1fr}.hero{padding-top:55px}.trustbar-inner,.outcomes,.services,.steps{grid-template-columns:1fr 1fr}.head{display:block}.intro{margin-top:18px}.pain{display:block}}
+@media(max-width:460px){.logo{font-size:16px}.logo .sep{margin:0 5px}}
 @media(max-width:600px){.wrap{padding:0 18px}.hero h1{font-size:56px}.lead{font-size:16px}.section{padding:68px 0}.trustbar-inner,.outcomes,.services,.steps{grid-template-columns:1fr}.trustitem{border-right:0;border-bottom:1px solid var(--line);padding:10px 0}.trustitem:last-child{border:0}.finalbox{padding:30px}.faq h2{font-size:48px}.foot{display:block}.sticky{display:block;position:fixed;bottom:0;left:0;right:0;padding:10px 14px;background:var(--navy);z-index:30}.sticky .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1602587951437019');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1602587951437019&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
 <header class="wrap nav">
-  <a class="logo" href="/">WebSathi<i></i></a>
+  <a class="logo" href="/"><span class="sub">AutoPend</span><span class="sep">|</span>WebSathi<i></i></a>
   <nav class="navlinks"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="switch" href="/automation/">Need automation instead? &#8594;</a></nav>
   <a class="btn blue" href="#book">Book Free Consultation ↗</a>
 </header>

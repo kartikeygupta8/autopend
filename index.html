@@ -1,15 +1,70 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AutoPend / WebSathi — Automation &amp; Website Development</title>
-<meta name="description" content="Two services: AutoPend for business automation and internal tools, WebSathi for professional business websites. Free consultation either way.">
+<title>AutoPend / WebSathi — Automation &amp; Website Development for Indian Businesses</title>
+<meta name="description" content="Two free-consultation services for established Indian businesses: AutoPend for business automation and internal tools, WebSathi for professional websites. No obligation either way.">
 <meta name="robots" content="index, follow">
+<meta name="geo.region" content="IN">
 <!-- TODO: confirm production domain and update canonical + OG/Twitter URLs below before launch -->
 <link rel="canonical" href="https://autopend.in/">
 <meta name="theme-color" content="#0b1220">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AutoPend | WebSathi">
+<meta property="og:title" content="AutoPend / WebSathi — Automation &amp; Website Development for Indian Businesses">
+<meta property="og:description" content="Two free-consultation services for established Indian businesses: business automation (AutoPend) and professional website development (WebSathi). No obligation either way.">
+<meta property="og:url" content="https://autopend.in/">
+<meta property="og:image" content="https://autopend.in/assets/screenshots/livoh-desktop.jpg">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AutoPend / WebSathi — Automation &amp; Website Development for Indian Businesses">
+<meta name="twitter:description" content="Two free-consultation services for established Indian businesses: business automation and professional website development.">
+<meta name="twitter:image" content="https://autopend.in/assets/screenshots/livoh-desktop.jpg">
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1220'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AutoPend | WebSathi",
+  "url": "https://autopend.in/",
+  "inLanguage": "en-IN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autopend.in/automation/#org",
+      "name": "AutoPend",
+      "url": "https://autopend.in/automation/",
+      "description": "AI automation, internal tools and websites for established Indian businesses, starting with a free workflow audit.",
+      "areaServed": { "@type": "Country", "name": "India" },
+      "email": "mailto:kartikeygupta8@gmail.com",
+      "telephone": "+91-79856-05973",
+      "founder": { "@type": "Person", "name": "Kartikey Gupta", "url": "https://kartikeygupta.co" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://autopend.in/webdev/#org",
+      "name": "WebSathi",
+      "url": "https://autopend.in/webdev/",
+      "description": "Professional website development for established Indian businesses, starting with a free consultation before any quote.",
+      "areaServed": { "@type": "Country", "name": "India" },
+      "email": "mailto:kartikeygupta8@gmail.com",
+      "telephone": "+91-79856-05973",
+      "founder": { "@type": "Person", "name": "Kartikey Gupta", "url": "https://kartikeygupta.co" }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
@@ -17,7 +72,10 @@
 :root{--ink:#0b1220;--muted:#667085;--line:#e7e9ed;--bg:#f8f9fb;--blue:#155eef;--lime:#d9ff4f}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;display:flex;flex-direction:column}
 a{color:inherit;text-decoration:none}
-main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}
+header{padding:22px 20px;text-align:center}
+.brandmark{font:800 18px Manrope,sans-serif;letter-spacing:-.02em}
+.brandmark .sep{color:var(--muted);font-weight:400;margin:0 10px}
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px 40px;text-align:center}
 .eyebrow{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;color:var(--muted);margin-bottom:14px}
 h1{font:800 clamp(28px,4vw,40px)/1.15 Manrope;letter-spacing:-.03em;max-width:600px;margin:0 0 40px}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;width:100%}
@@ -33,8 +91,26 @@ h1{font:800 clamp(28px,4vw,40px)/1.15 Manrope;letter-spacing:-.03em;max-width:60
 footer{padding:22px;text-align:center;color:var(--muted);font-size:11px}
 footer a{font-weight:600;color:var(--ink)}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1602587951437019');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1602587951437019&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
+<header><span class="brandmark">AutoPend<span class="sep">|</span>WebSathi</span></header>
 <main>
   <div class="eyebrow">Two ways we help businesses run better</div>
   <h1>Pick the side that fits what you need right now.</h1>

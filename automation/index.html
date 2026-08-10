@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AutoPend — The automation layer for work that should never stay pending.</title>
-<meta name="description" content="AutoPend builds AI automation, internal tools and websites for established Indian businesses. Free 30-minute audit, no obligation.">
+<title>AutoPend — Business Automation for Indian Businesses | Free 30-Min Audit</title>
+<meta name="description" content="AutoPend builds AI automation, internal tools and websites for established Indian businesses — manufacturers, distributors, retailers, service businesses. Free 30-minute audit, no obligation.">
 <meta name="robots" content="index, follow">
+<meta name="geo.region" content="IN">
 <!-- TODO: confirm production domain and update canonical + OG/Twitter URLs below before launch -->
 <link rel="canonical" href="https://autopend.in/automation/">
 <meta name="theme-color" content="#0b1220">
@@ -16,6 +17,7 @@
 <meta property="og:description" content="AutoPend builds AI automation, internal tools and websites for established Indian businesses. Free 30-minute audit, no obligation.">
 <meta property="og:url" content="https://autopend.in/automation/">
 <meta property="og:image" content="https://autopend.in/assets/screenshots/livoh-desktop.jpg">
+<meta property="og:locale" content="en_IN">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AutoPend — The automation layer for work that should never stay pending.">
@@ -31,8 +33,10 @@
   "name": "AutoPend",
   "url": "https://autopend.in/automation/",
   "description": "AutoPend builds AI automation, internal tools and websites for established Indian businesses, starting with a free workflow audit.",
-  "areaServed": "IN",
+  "areaServed": { "@type": "Country", "name": "India" },
   "email": "mailto:kartikeygupta8@gmail.com",
+  "telephone": "+91-79856-05973",
+  "founder": { "@type": "Person", "name": "Kartikey Gupta", "url": "https://kartikeygupta.co" },
   "sameAs": []
 }
 </script>
@@ -42,8 +46,32 @@
   "@type": "Service",
   "serviceType": "Business Process Automation",
   "provider": { "@type": "Organization", "name": "AutoPend" },
-  "areaServed": "IN",
-  "description": "AI automation, internal tools and websites for Indian businesses, scoped after a free workflow audit."
+  "areaServed": { "@type": "Country", "name": "India" },
+  "description": "AI automation, internal tools and websites for Indian businesses, scoped after a free workflow audit.",
+  "offers": { "@type": "Offer", "name": "Free 30-minute workflow audit", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autopend.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Automation", "item": "https://autopend.in/automation/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What does the audit cost?", "acceptedAnswer": { "@type": "Answer", "text": "₹0. It's a 30-minute, no-obligation conversation about your current workflow." } },
+    { "@type": "Question", "name": "Do you replace our staff?", "acceptedAnswer": { "@type": "Answer", "text": "The goal is to remove repetitive work so the same team can handle more." } },
+    { "@type": "Question", "name": "We mostly use WhatsApp and Excel. Is that okay?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can automate around the tools you already use." } },
+    { "@type": "Question", "name": "Do you still build websites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, through our WebSathi website development service at autopend.in/webdev/. Websites and e-commerce can be built as part of the wider system." } },
+    { "@type": "Question", "name": "What if we don't need automation?", "acceptedAnswer": { "@type": "Answer", "text": "We'll tell you. The audit is meant to help you make the right decision." } }
+  ]
 }
 </script>
 
@@ -77,6 +105,23 @@ footer{background:var(--navy);color:white;padding:25px 0}.foot{display:flex;just
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1602587951437019');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1602587951437019&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <header class="wrap">
