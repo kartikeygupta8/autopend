@@ -1,20 +1,32 @@
 # AutoPend
 
-> AutoPend is run by Kartikey Gupta, a full-stack developer with 7+ years of experience, serving businesses across India remotely. It builds and manages the systems growing businesses run on. Free, no-obligation business review call before any quote.
+> AutoPend is run by Kartikey Gupta, a full-stack developer with 7+ years of experience, serving businesses across India remotely. It builds and manages the systems growing Indian businesses run on. Free, no-obligation business review call before any quote.
 
 ## Services
 
-- Custom website development, with AI integration and ongoing management.
+- Custom website development, with AI integration and ongoing management after launch.
 - WhatsApp automation for orders, replies and follow-ups.
-- AI voice agent for calling leads and taking follow-ups.
-- ERP / CRM / Inventory management software for MSMEs — includes an AI layer that summarises business activity daily and monthly, with full context of everything shared with it.
+- AI voice agent that calls leads, follows up automatically, and books meetings.
+- ERP / CRM / Inventory management software for MSMEs, with role-based access and an AI layer that summarises business activity daily and monthly, with full context of everything shared with it.
+
+## Process
+
+Free review call → quotation → plan finalised → implementation → testing → launch → ongoing management.
 
 ## Real client work
 
 - [Liv'Oh](https://livoh.in) — home decor e-commerce (D2C).
-- [Sunpress Organics](https://sunpressorganic.com) — cold-pressed mustard oil brand storefront (D2C).
-- [SunpressERP](https://sunpresserp.onrender.com/) — internal manufacturing ERP for Sunpress (inventory, costing, production tracking).
-- [Lex & Ledger](https://lexandledger.in) — legal & financial services marketplace, with an AI support agent that knows every client and every service offered.
+- [SunpressERP](https://sunpresserp.onrender.com/) — internal manufacturing ERP for a cold-pressed mustard oil producer (inventory, costing, production tracking, role-based access).
+- [Lex & Ledger](https://lexandledger.in) — legal & financial services marketplace (B2B/B2C), with an AI support agent that knows every client and every service offered.
+
+## Frequently asked questions
+
+- Does the free call cost anything? No, ₹0, 30 minutes, no obligation.
+- Do I need all four services? No, AutoPend scopes to exactly what a business needs, even just one service.
+- Who actually builds this? One team, led by Kartikey Gupta, no outsourcing or handoffs.
+- How long does a project take? Depends on scope; a realistic timeline is given after the free review call.
+- Is there support after launch? Yes, ongoing management is the final step of the process, not an afterthought.
+- Does AutoPend work outside one city? Yes, remotely across India.
 
 ## Contact
 
