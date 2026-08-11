@@ -177,9 +177,11 @@ section{padding:96px 0}
 .pd a.visit:hover{text-decoration:underline}
 
 
-/* voice agent ad */
-.voice{border-radius:28px;background:radial-gradient(circle at 15% 20%,rgba(217,255,79,.08),transparent 45%),linear-gradient(155deg,#0b1220,#131c2c);color:#fff;padding:60px 48px;position:relative;overflow:hidden}
-@media(max-width:600px){.voice{padding:40px 22px}}
+/* services carousel */
+.voice{border-radius:28px;background:radial-gradient(circle at 15% 20%,rgba(217,255,79,.08),transparent 45%),linear-gradient(155deg,#0b1220,#131c2c);color:#fff;position:relative;overflow:hidden}
+.carousel-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.slide{flex:0 0 100%;min-width:0;padding:60px 48px}
+@media(max-width:600px){.slide{padding:40px 22px}}
 .voice-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 @media(max-width:860px){.voice-grid{grid-template-columns:1fr}}
 .voice h2{font-size:clamp(28px,4.4vw,44px);line-height:1.08}
@@ -187,6 +189,9 @@ section{padding:96px 0}
 .voice p{margin:18px 0 0;color:#aab3c2;font-size:15.5px;line-height:1.6;max-width:480px}
 .voice-feats{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .voice-feats span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600}
+.carousel-dots{display:flex;justify-content:center;gap:8px;padding:0 0 28px}
+.carousel-dots button{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;padding:0;transition:background .2s,width .2s}
+.carousel-dots button.active{background:var(--lime);width:22px;border-radius:4px}
 
 .phonecall{background:#0f1626;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:22px;max-width:290px;margin:0 auto;box-shadow:0 30px 70px rgba(0,0,0,.4)}
 .phonecall .who{display:flex;align-items:center;gap:10px}
@@ -204,18 +209,13 @@ section{padding:96px 0}
 .transcript .ai{color:var(--lime)}
 .transcript .lead{color:#c7ced8}
 
-/* other services */
-.svc2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media(max-width:760px){.svc2{grid-template-columns:1fr}}
-.svc2card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
-.svc2card h3{font-size:22px;margin-bottom:10px}
-.svc2card p{font-size:14px;color:var(--muted);line-height:1.6;margin:0 0 20px}
-.chatmock{background:#f4f1e9;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
+/* carousel slide visuals */
+.chatmock{background:#f4f1e9;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:8px;max-width:290px;margin:0 auto;box-shadow:0 30px 70px rgba(0,0,0,.35)}
 .bubble{max-width:78%;padding:9px 13px;border-radius:12px;font-size:12.5px;line-height:1.4}
 .bubble.in{background:#fff;align-self:flex-start;border-bottom-left-radius:3px}
 .bubble.out{background:#dcf8c6;align-self:flex-end;border-bottom-right-radius:3px}
-.webmock{display:flex;align-items:center;justify-content:center;background:var(--navy);border-radius:14px;padding:28px}
-.webmock .browserframe{width:100%;max-width:260px;box-shadow:none}
+.webmock{max-width:290px;margin:0 auto;box-shadow:0 30px 70px rgba(0,0,0,.35);border-radius:12px;overflow:hidden}
+.webmock .browserframe{box-shadow:none}
 
 /* before/after */
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -421,63 +421,81 @@ src="https://www.facebook.com/tr?id=1602587951437019&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- AI VOICE AGENT -->
+<!-- SERVICES CAROUSEL -->
 <section id="services">
   <div class="wrap">
-    <div class="voice">
-      <div class="voice-grid">
-        <div>
-          <div class="eyebrow" style="color:#8a96ab">AI Voice Agent</div>
-          <h2>It calls. It follows up. <em>It never forgets.</em></h2>
-          <p>Your leads stop waiting the moment they enquire &mdash; a voice that sounds human, works 24/7, and never once says &ldquo;let me call you back.&rdquo;</p>
-          <div class="voice-feats">
-            <span>&#128222; Calls in seconds</span>
-            <span>&#128257; Follows up automatically</span>
-            <span>&#128483; Sounds human</span>
-          </div>
-        </div>
-        <div class="phonecall">
-          <div class="who"><div class="avatar"></div><b>Rohit Sharma</b></div>
-          <div class="status"><span class="pulse"></span> Follow-up #2 &middot; 00:42</div>
-          <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="transcript">
-            <div class="ai">AI: Hi Rohit, following up on the quote we sent &mdash; any questions?</div>
-            <div class="lead">Rohit: Just checking the delivery time.</div>
-            <div class="ai">AI: 5&ndash;7 days. Want me to confirm the order?</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="voice" id="svcCarousel">
+      <div class="carousel-track">
 
-<!-- OTHER SERVICES -->
-<section>
-  <div class="wrap">
-    <div class="sec-head center">
-      <div class="eyebrow">More of what we build</div>
-      <h2>The rest of the toolkit.</h2>
-    </div>
-    <div class="svc2">
-      <div class="svc2card">
-        <h3>WhatsApp Automation</h3>
-        <p>Orders, updates and replies &mdash; handled automatically, in the app your customers already use.</p>
-        <div class="chatmock">
-          <div class="bubble in">Hi, is the oil back in stock?</div>
-          <div class="bubble out">Yes! 1L pack is back &mdash; want me to place the order?</div>
-          <div class="bubble in">Yes please</div>
-          <div class="bubble out">Done ✅ Order #1042 confirmed.</div>
-        </div>
-      </div>
-      <div class="svc2card">
-        <h3>Websites, Built Right</h3>
-        <p>Custom-built, AI-integrated, and actually maintained after launch &mdash; not abandoned the day it ships.</p>
-        <div class="webmock">
-          <div class="browserframe">
-            <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-            <img src="assets/screenshots/livoh-desktop.jpg" alt="" loading="lazy">
+        <div class="slide">
+          <div class="voice-grid">
+            <div>
+              <div class="eyebrow" style="color:#8a96ab">AI Voice Agent</div>
+              <h2>It calls. It follows up. <em>It never forgets.</em></h2>
+              <div class="voice-feats">
+                <span>&#128222; Calls in seconds</span>
+                <span>&#128257; Follows up automatically</span>
+                <span>&#128483; Sounds human</span>
+              </div>
+            </div>
+            <div class="phonecall">
+              <div class="who"><div class="avatar"></div><b>Rohit Sharma</b></div>
+              <div class="status"><span class="pulse"></span> Follow-up #2 &middot; 00:42</div>
+              <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="transcript">
+                <div class="ai">AI: Hi Rohit, following up on the quote we sent &mdash; any questions?</div>
+                <div class="lead">Rohit: Just checking the delivery time.</div>
+                <div class="ai">AI: 5&ndash;7 days. Want me to confirm the order?</div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="slide">
+          <div class="voice-grid">
+            <div>
+              <div class="eyebrow" style="color:#8a96ab">WhatsApp Automation</div>
+              <h2>Orders and replies, <em>handled instantly.</em></h2>
+              <div class="voice-feats">
+                <span>&#128172; Instant replies</span>
+                <span>&#128722; Takes orders</span>
+                <span>&#128257; Order updates</span>
+              </div>
+            </div>
+            <div class="chatmock">
+              <div class="bubble in">Hi, is the oil back in stock?</div>
+              <div class="bubble out">Yes! 1L pack is back &mdash; want me to place the order?</div>
+              <div class="bubble in">Yes please</div>
+              <div class="bubble out">Done &#9989; Order #1042 confirmed.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="voice-grid">
+            <div>
+              <div class="eyebrow" style="color:#8a96ab">Custom Websites</div>
+              <h2>Built right. <em>Actually maintained.</em></h2>
+              <div class="voice-feats">
+                <span>&#9889; Fast to launch</span>
+                <span>&#129302; AI-integrated</span>
+                <span>&#128736; Ongoing support</span>
+              </div>
+            </div>
+            <div class="webmock">
+              <div class="browserframe">
+                <div class="topbar"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+                <img src="assets/screenshots/livoh-desktop.jpg" alt="" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-dots">
+        <button class="active" data-i="0" aria-label="Slide 1"></button>
+        <button data-i="1" aria-label="Slide 2"></button>
+        <button data-i="2" aria-label="Slide 3"></button>
       </div>
     </div>
   </div>
@@ -573,13 +591,50 @@ document.querySelectorAll('.book-cta').forEach(el => {
 });
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const targets = document.querySelectorAll('.svc, .tstep, .project, .svc2card, .bacard, .voice, .booking-card, .faq details');
+  const targets = document.querySelectorAll('.svc, .tstep, .project, .bacard, .voice, .booking-card, .faq details');
   targets.forEach(el => el.classList.add('reveal'));
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
   }), { threshold: .12 });
   targets.forEach(el => io.observe(el));
 }
+
+(function(){
+  const car = document.getElementById('svcCarousel');
+  if (!car) return;
+  const track = car.querySelector('.carousel-track');
+  const dots = [...car.querySelectorAll('.carousel-dots button')];
+  const count = dots.length;
+  let idx = 0, timer;
+
+  function go(i){
+    idx = (i + count) % count;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dots.forEach((d, n) => d.classList.toggle('active', n === idx));
+  }
+  function start(){
+    stop();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(() => go(idx + 1), 2500);
+  }
+  function stop(){ clearInterval(timer); }
+
+  dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); start(); }));
+  car.addEventListener('mouseenter', stop);
+  car.addEventListener('mouseleave', start);
+
+  let touchX = null;
+  car.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
+  car.addEventListener('touchend', e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    touchX = null;
+    start();
+  }, { passive: true });
+
+  start();
+})();
 </script>
 
 </body>
