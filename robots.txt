@@ -38,4 +38,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://autopend.in/sitemap.xml
+Sitemap: https://autopend.com/sitemap.xml
