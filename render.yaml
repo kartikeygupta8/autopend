@@ -10,6 +10,22 @@ services:
         name: Cache-Control
         value: public, max-age=0, must-revalidate
     routes:
+      - type: redirect
+        source: /automation
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /automation/*
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /webdev
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /webdev/*
+        destination: /
+        statusCode: 301
       - type: rewrite
         source: /*
         destination: /index.html
