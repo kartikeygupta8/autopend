@@ -165,14 +165,26 @@ section{padding:96px 0}
 .svc p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.5}
 
 /* timeline */
-.timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;counter-reset:step}
-@media(max-width:900px){.timeline{grid-template-columns:1fr 1fr;gap:24px}}
-@media(max-width:520px){.timeline{grid-template-columns:1fr}}
-.tstep{position:relative;padding-top:36px}
-.tstep::before{content:'';position:absolute;top:15px;left:0;right:-8px;height:2px;background:var(--line)}
+.timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+@media(max-width:900px){.timeline{display:flex;flex-direction:column;gap:0;max-width:420px;margin:0 auto}}
+.tstep{position:relative;padding-top:40px}
+@media(max-width:900px){.tstep{padding:0 0 30px 46px}}
+.tstep:last-child{padding-bottom:0}
+.tstep::before{content:'';position:absolute;top:15px;left:0;right:-8px;height:3px;border-radius:2px;background:var(--line);z-index:0}
+@media(max-width:900px){.tstep::before{top:34px;left:15px;right:auto;width:3px;height:calc(100% - 8px)}}
 .tstep:last-child::before{display:none}
-@media(max-width:900px){.tstep::before{display:none}}
-.tstep .dot{position:absolute;top:0;left:0;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font:800 13px Manrope;z-index:1}
+.tstep.done::before{background:var(--lime)}
+.timeline .tstep:nth-child(3)::before{background:linear-gradient(to right,var(--lime),var(--line) 80%)}
+@media(max-width:900px){.timeline .tstep:nth-child(3)::before{background:linear-gradient(to bottom,var(--lime),var(--line) 80%)}}
+.timeline .tstep:nth-child(1){transition-delay:.05s}
+.timeline .tstep:nth-child(2){transition-delay:.15s}
+.timeline .tstep:nth-child(3){transition-delay:.25s}
+.timeline .tstep:nth-child(4){transition-delay:.35s}
+.timeline .tstep:nth-child(5){transition-delay:.45s}
+.timeline .tstep:nth-child(6){transition-delay:.55s}
+.timeline .tstep:nth-child(7){transition-delay:.65s}
+.tstep .dot{position:absolute;top:0;left:0;width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--line);color:var(--muted);display:flex;align-items:center;justify-content:center;font:800 13px Manrope;z-index:1;transition:background .3s,border-color .3s,color .3s}
+.tstep.done .dot{background:var(--lime);border-color:var(--lime);color:var(--navy);font-size:15px}
 .tstep h4{font-size:14px;margin-bottom:4px;line-height:1.3}
 .tstep p{font-size:12px;color:var(--muted);margin:0;line-height:1.5}
 
@@ -378,11 +390,12 @@ src="https://www.facebook.com/tr?id=1602587951437019&ev=PageView&noscript=1"
     <div class="sec-head center">
       <div class="eyebrow">How it works</div>
       <h2>Seven steps. No surprises.</h2>
+      <p>Steps 1&ndash;3 happen before you spend a rupee &mdash; free call, clear quote, agreed plan.</p>
     </div>
     <div class="timeline">
-      <div class="tstep"><div class="dot">1</div><h4>Review Call</h4><p>Business understood.</p></div>
-      <div class="tstep"><div class="dot">2</div><h4>Quotation</h4><p>Agreed with requirement.</p></div>
-      <div class="tstep"><div class="dot">3</div><h4>Plan</h4><p>Finalised and discussed.</p></div>
+      <div class="tstep done"><div class="dot">&#10003;</div><h4>Review Call</h4><p>Business understood.</p></div>
+      <div class="tstep done"><div class="dot">&#10003;</div><h4>Quotation</h4><p>Agreed with requirement.</p></div>
+      <div class="tstep done"><div class="dot">&#10003;</div><h4>Plan</h4><p>Finalised and discussed.</p></div>
       <div class="tstep"><div class="dot">4</div><h4>Implementation</h4><p>We build.</p></div>
       <div class="tstep"><div class="dot">5</div><h4>Testing</h4><p>Bugs found and fixed.</p></div>
       <div class="tstep"><div class="dot">6</div><h4>Completion</h4><p>Project goes live.</p></div>
