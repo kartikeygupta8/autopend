@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: webhelp-landing
+    name: autopend-landing
     runtime: static
     buildCommand: ""
     staticPublishPath: .
