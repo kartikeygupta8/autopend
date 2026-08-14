@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Aarav Realty — A Real Estate Platform Example by AutoPend</title>
+<meta name="description" content="Property discovery, WhatsApp automation, a CRM and site-visit booking, all in one platform — demonstrated with Aarav Realty, a fictional portfolio project built by AutoPend.">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="IN">
+<link rel="canonical" href="https://autopend.com/realestate/">
+<meta name="theme-color" content="#1D1B18">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AutoPend">
+<meta property="og:title" content="Aarav Realty — A Real Estate Platform Example by AutoPend">
+<meta property="og:description" content="Property discovery, WhatsApp automation, a CRM and site-visit booking, all in one platform — a fictional portfolio project built by AutoPend.">
+<meta property="og:url" content="https://autopend.com/realestate/">
+<meta property="og:image" content="https://autopend.com/icon-512.png">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aarav Realty — A Real Estate Platform Example by AutoPend">
+<meta name="twitter:description" content="Property discovery, WhatsApp automation, a CRM and site-visit booking — a fictional portfolio project by AutoPend.">
+<meta name="twitter:image" content="https://autopend.com/icon-512.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ivory:#F6F1E7; --ivory-2:#EEE6D6; --charcoal:#1C1A17; --charcoal-2:#26231E;
+  --stone:#8C8578; --bronze:#AD7C43; --bronze-light:#D6AC73; --forest:#33473C;
+  --ink:#1C1A17; --line:rgba(28,26,23,.14); --line-dark:rgba(246,241,231,.14);
+  --max:1180px; --shadow:0 24px 60px rgba(28,26,23,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;margin:0;letter-spacing:-.01em;font-weight:600}
+em{font-style:italic;color:var(--bronze)}
+.eyebrow{font:700 11px/1 'DM Sans',sans-serif;letter-spacing:2.4px;text-transform:uppercase;color:var(--bronze);margin-bottom:16px}
+section{padding:110px 0}
+@media(max-width:760px){section{padding:76px 0}}
+.dark{background:var(--charcoal);color:var(--ivory)}
+.dark .eyebrow{color:var(--bronze-light)}
+.dark .muted{color:var(--stone)}
+.muted{color:var(--stone)}
+.center{text-align:center;margin:0 auto}
+.sec-head{max-width:640px;margin:0 auto 56px}
+.sec-head.left{margin:0 0 56px}
+.sec-head h2{font-size:clamp(30px,4.4vw,50px);line-height:1.05}
+.sec-head p{margin-top:16px;font-size:16.5px;line-height:1.65;color:var(--stone)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;font:700 12.5px 'DM Sans',sans-serif;letter-spacing:1.4px;text-transform:uppercase;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.btn.solid{background:var(--charcoal);color:var(--ivory)}
+.btn.solid:hover{box-shadow:0 14px 28px rgba(28,26,23,.28)}
+.btn.bronze{background:var(--bronze);color:var(--charcoal)}
+.btn.bronze:hover{box-shadow:0 14px 28px rgba(173,124,67,.35)}
+.btn.outline{background:transparent;border-color:currentColor}
+.btn.outline:hover{background:rgba(255,255,255,.06)}
+.dark .btn.outline{border-color:rgba(246,241,231,.4)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* AutoPend bridge bar */
+.bridge{position:sticky;top:0;z-index:80;background:var(--charcoal);color:var(--ivory);font:600 12px/1 'DM Sans',sans-serif}
+.bridge .wrap{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 28px;text-align:center;flex-wrap:wrap}
+.bridge img{height:16px;width:auto;border-radius:3px}
+.bridge a{color:var(--bronze-light);font-weight:700;border-bottom:1px solid rgba(214,172,115,.5)}
+.bridge a:hover{border-color:var(--bronze-light)}
+
+/* nav */
+header{position:sticky;top:37px;z-index:70;transition:background .4s,padding .4s,border-color .4s}
+header .navwrap{max-width:var(--max);margin:0 auto;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid transparent;transition:border-color .4s}
+header.scrolled{background:rgba(28,26,23,.92);backdrop-filter:blur(10px)}
+header.scrolled .navwrap{padding:16px 28px;border-color:var(--line-dark)}
+.logo{font:600 21px 'Cormorant Garamond',serif;letter-spacing:2px;text-transform:uppercase;color:var(--ivory)}
+.navlinks{display:flex;gap:34px;font-size:12.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--stone)}
+.navlinks a:hover{color:var(--ivory)}
+@media(max-width:820px){.navlinks{display:none}}
+.navcta{font-size:11.5px}
+.menubtn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.menubtn span{width:22px;height:2px;background:var(--ivory)}
+@media(max-width:820px){.menubtn{display:flex}.navcta.desktop-only{display:none}}
+.mobilemenu{position:fixed;inset:0;background:var(--charcoal);z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mobilemenu.open{transform:translateY(0)}
+.mobilemenu a{font:600 15px 'Cormorant Garamond',serif;font-size:28px;color:var(--ivory);text-transform:uppercase;letter-spacing:1px}
+.mobilemenu .close{position:absolute;top:22px;right:22px;background:none;border:none;color:var(--ivory);font-size:28px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--charcoal);color:var(--ivory);overflow:hidden;padding:80px 0 60px}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.9}
+.hero-bg svg{width:100%;height:100%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,23,.2),rgba(28,26,23,.85) 88%)}
+.hero-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 28px;width:100%}
+.hero h1{font-size:clamp(44px,9vw,110px);line-height:.98;letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:block;transform:translateY(110%)}
+.hero .lead{max-width:480px;margin:26px 0 0;font-size:17px;line-height:1.7;color:#D8D2C4}
+.hero-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+.hero-card{position:absolute;right:28px;bottom:46px;width:270px;background:var(--ivory);color:var(--ink);border-radius:2px;padding:22px;box-shadow:0 30px 70px rgba(0,0,0,.4);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-card .tag{font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--bronze)}
+.hero-card h3{font-size:22px;margin:8px 0 2px}
+.hero-card p{margin:0;font-size:12.5px;color:var(--stone);line-height:1.6}
+.hero-card .price{margin-top:10px;font:600 15px 'Cormorant Garamond',serif;color:var(--ink)}
+@media(max-width:900px){.hero-card{position:static;margin-top:40px;width:100%;max-width:320px;animation:none}}
+@media(prefers-reduced-motion:reduce){.hero-card{animation:none}}
+
+/* intro */
+.intro-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:60px;align-items:start}
+@media(max-width:820px){.intro-grid{grid-template-columns:1fr;gap:32px}}
+.intro-grid h2{font-size:clamp(30px,5vw,52px);line-height:1.12}
+.intro-grid .support{margin-top:26px;font-size:16px;line-height:1.7;color:var(--stone);max-width:380px}
+.intro-art{aspect-ratio:4/5;border-radius:2px;overflow:hidden;background:var(--ivory-2)}
+
+/* projects */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:900px){.proj-grid{grid-template-columns:1fr}}
+.pcard{background:var(--charcoal-2);border-radius:2px;overflow:hidden;cursor:pointer;transition:opacity .4s,transform .4s}
+.pcard.hidden{display:none}
+.pcard .pimg{aspect-ratio:4/3;overflow:hidden;position:relative}
+.pcard .pimg svg{width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .pimg svg{transform:scale(1.05)}
+.pcard .pbody{padding:22px 24px 26px}
+.pcard .demo-tag{font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;display:block}
+.pcard h3{font-size:25px;color:var(--ivory)}
+.pcard .loc{font-size:12.5px;color:var(--stone);margin-top:4px}
+.pcard .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-dark)}
+.pcard .config{font-size:12px;color:var(--stone)}
+.pcard .price{font:600 16px 'Cormorant Garamond',serif;color:var(--bronze-light);margin-top:4px}
+.pcard .status{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:20px;white-space:nowrap}
+.status.limited{background:rgba(173,124,67,.18);color:var(--bronze-light)}
+.status.selling{background:rgba(51,71,60,.4);color:#8FB89E}
+.status.soon{background:rgba(140,133,120,.2);color:var(--stone)}
+.results-count{margin-top:36px;font-size:12.5px;color:var(--stone);text-align:center}
+
+/* search */
+.search-panel{background:var(--charcoal-2);border-radius:3px;padding:32px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:16px;align-items:end}
+@media(max-width:900px){.search-panel{grid-template-columns:1fr 1fr;gap:18px}}
+@media(max-width:520px){.search-panel{grid-template-columns:1fr}}
+.field label{display:block;font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+.field select{width:100%;background:var(--charcoal);color:var(--ivory);border:1px solid var(--line-dark);border-radius:2px;padding:12px 14px;font:500 13.5px 'DM Sans',sans-serif;cursor:pointer}
+.search-panel .btn{width:100%;justify-content:center}
+
+/* booking */
+.booking{background:var(--ivory-2);border-radius:3px;padding:0;overflow:hidden;max-width:760px;margin:0 auto}
+.booking-steps{display:flex;border-bottom:1px solid var(--line)}
+.booking-steps span{flex:1;text-align:center;padding:16px 6px;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--stone);border-bottom:2px solid transparent}
+.booking-steps span.active{color:var(--ink);border-color:var(--bronze)}
+.booking-steps span.done{color:var(--bronze)}
+.bstep{display:none;padding:40px}
+@media(max-width:600px){.bstep{padding:28px 22px}}
+.bstep.active{display:block}
+.bstep h3{font-size:26px;margin-bottom:22px}
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opt{border:1px solid var(--line);border-radius:2px;padding:16px 18px;cursor:pointer;background:#fff;transition:border-color .25s,box-shadow .25s}
+.opt.sel{border-color:var(--bronze);box-shadow:0 0 0 1px var(--bronze)}
+.opt b{display:block;font:600 16px 'Cormorant Garamond',serif}
+.opt span{font-size:12px;color:var(--stone)}
+.chip-grid{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:10px 18px;font-size:13px;cursor:pointer;background:#fff;transition:border-color .25s,background .25s}
+.chip.sel{background:var(--charcoal);color:var(--ivory);border-color:var(--charcoal)}
+.bform{display:grid;gap:14px;max-width:420px}
+.bform input{padding:13px 14px;border:1px solid var(--line);border-radius:2px;font:500 14px 'DM Sans',sans-serif;background:#fff}
+.bsummary{margin-top:20px;padding:16px 18px;background:#fff;border-radius:2px;font-size:12.5px;color:var(--stone);line-height:1.8}
+.bsummary b{color:var(--ink)}
+.bnav{display:flex;justify-content:space-between;margin-top:30px;gap:12px}
+.bnav .btn{padding:13px 24px}
+.success{display:none;text-align:center;padding:64px 40px}
+.success.active{display:block}
+.success h3{font-size:30px}
+.success p{color:var(--stone);margin:14px 0 0;font-size:14.5px}
+.success .btn-row{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+
+/* whatsapp */
+.wa-wrap{display:flex;justify-content:center}
+.wa-phone{width:100%;max-width:320px;background:#0f0e0c;border-radius:26px;padding:8px;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.wa-screen{background:#EDE6D6;border-radius:20px;padding:16px 12px;min-height:520px;display:flex;flex-direction:column;gap:10px}
+.wa-head{display:flex;align-items:center;gap:10px;padding:4px 6px 12px;border-bottom:1px solid rgba(0,0,0,.08)}
+.wa-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--bronze),var(--forest))}
+.wa-head b{font-size:13.5px}
+.wa-head span{display:block;font-size:10.5px;color:#6b6558}
+.wa-msg{max-width:82%;padding:9px 13px;border-radius:12px;font-size:12px;line-height:1.5;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
+.wa-msg.show{opacity:1;transform:none}
+.wa-msg.in{background:#fff;align-self:flex-start;border-bottom-left-radius:3px}
+.wa-msg.out{background:#DCEFD9;align-self:flex-end;border-bottom-right-radius:3px}
+.wa-quick{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-end;max-width:82%;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
+.wa-quick.show{opacity:1;transform:none}
+.wa-quick button{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:6px 12px;font-size:10.5px;font-weight:700;color:var(--forest)}
+
+/* crm */
+.crm-panel{background:var(--charcoal-2);border-radius:4px;overflow:hidden;box-shadow:var(--shadow)}
+.crm-top{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line-dark)}
+.crm-top span{width:9px;height:9px;border-radius:50%;background:var(--stone);opacity:.5}
+.crm-body{display:grid;grid-template-columns:180px 1fr}
+@media(max-width:760px){.crm-body{grid-template-columns:1fr}}
+.crm-side{border-right:1px solid var(--line-dark);padding:20px 0}
+@media(max-width:760px){.crm-side{display:none}}
+.crm-side a{display:block;padding:11px 22px;font-size:12.5px;color:var(--stone);border-left:2px solid transparent}
+.crm-side a.active{color:var(--ivory);border-color:var(--bronze);background:rgba(173,124,67,.08)}
+.crm-main{padding:26px}
+.crm-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:28px}
+@media(max-width:900px){.crm-metrics{grid-template-columns:repeat(2,1fr)}}
+.crm-metrics .m{background:var(--charcoal);border:1px solid var(--line-dark);border-radius:3px;padding:16px}
+.crm-metrics .m b{display:block;font:600 22px 'Cormorant Garamond',serif;color:var(--ivory)}
+.crm-metrics .m span{font-size:10.5px;color:var(--stone);text-transform:uppercase;letter-spacing:.6px}
+.kanban{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:14px;overflow-x:auto;padding-bottom:6px}
+.kcol h4{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--stone);margin-bottom:10px}
+.kcard{background:var(--charcoal);border:1px solid var(--line-dark);border-radius:4px;padding:13px;margin-bottom:10px;transition:transform .25s,box-shadow .25s}
+.kcard:hover{box-shadow:0 12px 26px rgba(0,0,0,.35)}
+.kcard b{display:block;font-size:13px;color:var(--ivory)}
+.kcard .kp{font-size:10.5px;color:var(--bronze-light);margin-top:3px}
+.kcard .ka{font-size:10px;color:var(--stone);margin-top:6px}
+
+/* workflow */
+.flow{max-width:520px;margin:0 auto}
+.fstep{position:relative;padding:0 0 40px 44px}
+.fstep:last-child{padding-bottom:0}
+.fstep::before{content:'';position:absolute;left:11px;top:26px;bottom:-8px;width:2px;background:var(--line-dark);transform:scaleY(0);transform-origin:top;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.fstep.drawn::before{transform:scaleY(1)}
+.fstep:last-child::before{display:none}
+.fstep .fdot{position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--bronze);color:var(--charcoal);display:flex;align-items:center;justify-content:center;font:700 11px 'DM Sans',sans-serif}
+.fstep p{margin:0;font:600 16px 'Cormorant Garamond',serif;color:var(--ivory)}
+
+/* about strip */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:36px;text-align:center}}
+.stat-row{display:flex;gap:44px}
+@media(max-width:820px){.stat-row{justify-content:center}}
+@media(max-width:420px){.stat-row{gap:24px}}
+.stat b{display:block;font:600 44px 'Cormorant Garamond',serif;color:var(--bronze-light)}
+.stat span{font-size:11px;color:var(--stone);text-transform:uppercase;letter-spacing:1px}
+
+/* journal */
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:820px){.journal-grid{grid-template-columns:1fr}}
+.jcard{padding:26px;border:1px solid var(--line);border-radius:2px;transition:transform .3s,box-shadow .3s}
+.jcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.jcard .demo-tag{font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--bronze);display:block;margin-bottom:12px}
+.jcard h3{font-size:21px;line-height:1.25}
+.jcard p{margin:12px 0 0;font-size:13px;color:var(--stone);line-height:1.6}
+
+/* faq */
+.faq{max-width:720px;margin:0 auto}
+.faq details{border-top:1px solid var(--line);padding:20px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font:600 17px 'Cormorant Garamond',serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--bronze);font-size:20px;flex:none}
+.faq details[open] summary::after{content:'\2013'}
+.faq p{margin:12px 0 0;font-size:14px;color:var(--stone);line-height:1.7}
+
+/* footer */
+footer{background:var(--charcoal);color:var(--ivory);padding:70px 0 26px}
+.foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:40px;padding-bottom:50px;border-bottom:1px solid var(--line-dark)}
+@media(max-width:700px){.foot-grid{grid-template-columns:1fr;gap:32px}}
+.foot-logo{font:600 24px 'Cormorant Garamond',serif;letter-spacing:1.5px;text-transform:uppercase}
+.foot-tag{margin-top:10px;font-size:13px;color:var(--stone);max-width:280px}
+.foot-col h5{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--stone);margin-bottom:16px}
+.foot-col a{display:block;font-size:13.5px;margin-bottom:10px;color:#D8D2C4}
+.foot-col a:hover{color:var(--ivory)}
+.foot-bottom{padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--stone)}
+.foot-bottom a{color:var(--bronze-light);font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="bridge">
+  <div class="wrap">
+    <img src="/assets/logo-autopend.jpg" alt="">
+    <span>An example built by AutoPend &mdash; see what we could build for you</span>
+    <a href="https://autopend.com/#book">Book a free call &#8594;</a>
+  </div>
+</div>
+
+<header id="siteHeader">
+  <div class="navwrap">
+    <a class="logo" href="#top">Aarav Realty</a>
+    <nav class="navlinks">
+      <a href="#projects">Projects</a>
+      <a href="#search">Residences</a>
+      <a href="#about">About</a>
+      <a href="#journal">Journal</a>
+      <a href="#faq">Contact</a>
+    </nav>
+    <a class="btn bronze navcta desktop-only" href="#visit">Book a Site Visit</a>
+    <button class="menubtn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobilemenu" id="mobileMenu">
+  <button class="close" id="menuClose" aria-label="Close menu">&times;</button>
+  <a href="#projects">Projects</a>
+  <a href="#search">Residences</a>
+  <a href="#about">About</a>
+  <a href="#journal">Journal</a>
+  <a href="#faq">Contact</a>
+  <a class="btn bronze" href="#visit">Book a Site Visit</a>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#33473C" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#1C1A17" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3A362E"/>
+          <stop offset="100%" stop-color="#26231E"/>
+        </linearGradient>
+      </defs>
+      <rect width="1400" height="800" fill="url(#skyg)"/>
+      <g fill="url(#bldg)" stroke="#AD7C43" stroke-opacity=".35">
+        <rect x="60" y="360" width="120" height="440"/>
+        <rect x="200" y="260" width="90" height="540"/>
+        <rect x="310" y="420" width="150" height="380"/>
+        <rect x="900" y="300" width="110" height="500"/>
+        <rect x="1030" y="200" width="90" height="600"/>
+        <rect x="1140" y="380" width="160" height="420"/>
+        <rect x="1300" y="440" width="80" height="360"/>
+      </g>
+      <g stroke="#D6AC73" stroke-opacity=".5" stroke-width="1">
+        <line x1="200" y1="290" x2="290" y2="290"/><line x1="200" y1="340" x2="290" y2="340"/>
+        <line x1="200" y1="390" x2="290" y2="390"/><line x1="1030" y1="230" x2="1120" y2="230"/>
+        <line x1="1030" y1="290" x2="1120" y2="290"/><line x1="1030" y1="350" x2="1120" y2="350"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow">Premium Residences &middot; Gurugram &amp; Noida</div>
+    <h1 id="heroH1">
+      <span class="line"><span>Building</span></span>
+      <span class="line"><span>Tomorrow&rsquo;s</span></span>
+      <span class="line"><span>Landmarks.</span></span>
+    </h1>
+    <p class="lead">Thoughtfully designed residences where architecture, location and everyday living come together.</p>
+    <div class="hero-actions">
+      <a class="btn bronze" href="#projects">Explore Residences</a>
+      <a class="btn outline" href="#visit">Book a Private Visit</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="tag">The Aravali</div>
+    <h3>Golf Course Road, Gurugram</h3>
+    <p>3 &amp; 4 BHK Residences</p>
+    <div class="price">Starting from &#8377;2.85 Cr</div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section>
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <h2>&ldquo;We don&rsquo;t just build homes.<br><em>We create addresses.</em>&rdquo;</h2>
+      <p class="support">Aarav Realty brings together thoughtful architecture, carefully chosen locations and spaces designed around contemporary Indian living.</p>
+    </div>
+    <div class="intro-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 500" width="100%" height="100%">
+        <rect width="400" height="500" fill="#EEE6D6"/>
+        <g fill="none" stroke="#AD7C43" stroke-width="1.4">
+          <rect x="60" y="80" width="280" height="340"/>
+          <line x1="60" y1="160" x2="340" y2="160"/>
+          <line x1="60" y1="240" x2="340" y2="240"/>
+          <line x1="60" y1="320" x2="340" y2="320"/>
+          <line x1="150" y1="80" x2="150" y2="420"/>
+          <line x1="250" y1="80" x2="250" y2="420"/>
+        </g>
+        <circle cx="200" cy="250" r="60" fill="none" stroke="#33473C" stroke-width="1.4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="dark">
+  <div class="wrap">
+    <div class="sec-head left reveal">
+      <div class="eyebrow">Portfolio</div>
+      <h2>Find a place worth coming home to.</h2>
+    </div>
+    <div class="proj-grid" id="projGrid">
+
+      <div class="pcard reveal" data-id="aravali" data-area="Gurugram" data-config="3,4" data-price="285" data-status="Limited Residences">
+        <div class="pimg">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice"><rect width="400" height="300" fill="#2A2620"/><rect x="140" y="20" width="120" height="280" fill="#3A362E" stroke="#AD7C43" stroke-opacity=".5"/><g stroke="#D6AC73" stroke-opacity=".4"><line x1="140" y1="60" x2="260" y2="60"/><line x1="140" y1="100" x2="260" y2="100"/><line x1="140" y1="140" x2="260" y2="140"/><line x1="140" y1="180" x2="260" y2="180"/><line x1="140" y1="220" x2="260" y2="220"/></g></svg>
+        </div>
+        <div class="pbody">
+          <span class="demo-tag">Fictional portfolio project</span>
+          <h3>The Aravali</h3>
+          <div class="loc">Golf Course Road, Gurugram</div>
+          <div class="row">
+            <div><div class="config">3 &amp; 4 BHK</div><div class="price">Starting &#8377;2.85 Cr</div></div>
+            <span class="status limited">Limited Residences</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-id="heights" data-area="Noida" data-config="3" data-price="172" data-status="Now Selling">
+        <div class="pimg">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice"><rect width="400" height="300" fill="#2A2620"/><rect x="60" y="90" width="280" height="210" fill="#3A362E" stroke="#AD7C43" stroke-opacity=".5"/><g stroke="#D6AC73" stroke-opacity=".35"><line x1="60" y1="130" x2="340" y2="130"/><line x1="60" y1="170" x2="340" y2="170"/><line x1="60" y1="210" x2="340" y2="210"/><line x1="60" y1="250" x2="340" y2="250"/><line x1="120" y1="90" x2="120" y2="300"/><line x1="200" y1="90" x2="200" y2="300"/><line x1="280" y1="90" x2="280" y2="300"/></g></svg>
+        </div>
+        <div class="pbody">
+          <span class="demo-tag">Fictional portfolio project</span>
+          <h3>Aarav Heights</h3>
+          <div class="loc">Sector 150, Noida</div>
+          <div class="row">
+            <div><div class="config">3 BHK</div><div class="price">Starting &#8377;1.72 Cr</div></div>
+            <span class="status selling">Now Selling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-id="meadows" data-area="New Gurgaon" data-config="2,3" data-price="98" data-status="Launching Soon">
+        <div class="pimg">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice"><rect width="400" height="300" fill="#2A2620"/><rect x="40" y="170" width="150" height="130" fill="#3A362E" stroke="#AD7C43" stroke-opacity=".5"/><rect x="210" y="140" width="150" height="160" fill="#332F28" stroke="#AD7C43" stroke-opacity=".5"/><circle cx="200" cy="230" r="34" fill="none" stroke="#33473C" stroke-width="6" stroke-opacity=".7"/></svg>
+        </div>
+        <div class="pbody">
+          <span class="demo-tag">Fictional portfolio project</span>
+          <h3>Meadows 24</h3>
+          <div class="loc">New Gurgaon</div>
+          <div class="row">
+            <div><div class="config">2 &amp; 3 BHK</div><div class="price">Starting &#8377;98 Lakh</div></div>
+            <span class="status soon">Launching Soon</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<section id="search">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Property Discovery</div>
+      <h2>Search residences by what matters to you.</h2>
+    </div>
+    <div class="search-panel reveal">
+      <div class="field"><label>Location</label>
+        <select id="fLocation"><option value="any">Any Location</option><option>Gurugram</option><option>Noida</option><option>New Gurgaon</option></select>
+      </div>
+      <div class="field"><label>Budget</label>
+        <select id="fBudget">
+          <option value="any">Any Budget</option>
+          <option value="0-100">Under &#8377;1 Cr</option>
+          <option value="100-200">&#8377;1&ndash;2 Cr</option>
+          <option value="200-300">&#8377;2&ndash;3 Cr</option>
+          <option value="300-9999">Above &#8377;3 Cr</option>
+        </select>
+      </div>
+      <div class="field"><label>Configuration</label>
+        <select id="fConfig"><option value="any">Any Configuration</option><option value="2">2 BHK</option><option value="3">3 BHK</option><option value="4">4 BHK</option></select>
+      </div>
+      <div class="field"><label>Status</label>
+        <select id="fStatus"><option value="any">Any Status</option><option>Limited Residences</option><option>Now Selling</option><option>Launching Soon</option></select>
+      </div>
+      <button class="btn solid" id="fSubmit">Show Residences</button>
+    </div>
+    <p class="results-count" id="resultsCount">Showing 3 of 3 residences</p>
+  </div>
+</section>
+
+<!-- SITE VISIT BOOKING -->
+<section id="visit" class="dark">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Site Visit</div>
+      <h2>Request a private viewing.</h2>
+    </div>
+    <div class="booking reveal">
+      <div class="booking-steps" id="bSteps">
+        <span class="active" data-s="1">1. Property</span>
+        <span data-s="2">2. Date</span>
+        <span data-s="3">3. Time</span>
+        <span data-s="4">4. Details</span>
+      </div>
+
+      <div class="bstep active" data-step="1">
+        <h3>Select a residence</h3>
+        <div class="opt-grid" id="bProperty">
+          <div class="opt" data-v="The Aravali &mdash; Golf Course Road, Gurugram"><b>The Aravali</b><span>Golf Course Road, Gurugram</span></div>
+          <div class="opt" data-v="Aarav Heights &mdash; Sector 150, Noida"><b>Aarav Heights</b><span>Sector 150, Noida</span></div>
+          <div class="opt" data-v="Meadows 24 &mdash; New Gurgaon"><b>Meadows 24</b><span>New Gurgaon</span></div>
+        </div>
+        <div class="bnav"><span></span><button class="btn solid" data-next>Continue</button></div>
+      </div>
+
+      <div class="bstep" data-step="2">
+        <h3>Choose a date</h3>
+        <div class="chip-grid" id="bDate">
+          <button class="chip" data-v="Saturday, 15 August">Saturday, 15 August</button>
+          <button class="chip" data-v="Saturday, 22 August">Saturday, 22 August</button>
+          <button class="chip" data-v="Saturday, 29 August">Saturday, 29 August</button>
+        </div>
+        <div class="bnav"><button class="btn outline" data-back>Back</button><button class="btn solid" data-next>Continue</button></div>
+      </div>
+
+      <div class="bstep" data-step="3">
+        <h3>Choose a time</h3>
+        <div class="chip-grid" id="bTime">
+          <button class="chip" data-v="10:00 AM">10:00 AM</button>
+          <button class="chip" data-v="11:30 AM">11:30 AM</button>
+          <button class="chip" data-v="1:00 PM">1:00 PM</button>
+          <button class="chip" data-v="4:00 PM">4:00 PM</button>
+          <button class="chip" data-v="6:00 PM">6:00 PM</button>
+        </div>
+        <div class="bnav"><button class="btn outline" data-back>Back</button><button class="btn solid" data-next>Continue</button></div>
+      </div>
+
+      <div class="bstep" data-step="4">
+        <h3>Your details</h3>
+        <form class="bform" id="bForm">
+          <input type="text" placeholder="Full Name" id="bName" required>
+          <input type="tel" placeholder="Mobile Number (+91)" id="bMobile" required>
+          <input type="email" placeholder="Email" id="bEmail" required>
+        </form>
+        <div class="bsummary" id="bSummary"></div>
+        <div class="bnav"><button class="btn outline" data-back>Back</button><button class="btn bronze" id="bSubmit">Request Private Viewing</button></div>
+      </div>
+
+      <div class="success" id="bSuccess">
+        <h3>Your site visit request has been received.</h3>
+        <p>An Aarav Realty property advisor will contact you shortly.</p>
+        <div class="btn-row">
+          <button class="btn outline" id="bReset">Explore More Residences</button>
+          <a class="btn bronze" href="https://autopend.com/#work">See how this was built by AutoPend &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP AUTOMATION -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">WhatsApp Automation</div>
+      <h2>Every enquiry, answered instantly.</h2>
+    </div>
+    <div class="wa-wrap reveal">
+      <div class="wa-phone">
+        <div class="wa-screen" id="waScreen">
+          <div class="wa-head"><div class="wa-avatar"></div><div><b>Aarav Realty</b><span>Property Advisor</span></div></div>
+          <div class="wa-msg in" data-d="0">Hi, I&rsquo;m interested in the 3 BHK at The Aravali.</div>
+          <div class="wa-msg out" data-d="1">Hi Rohan &#128075;<br><br>Thank you for your interest in The Aravali, Golf Course Road.<br><br>How can I help you today?</div>
+          <div class="wa-quick" data-d="2">
+            <button>View Price</button><button>View Floor Plan</button><button>Book Site Visit</button><button>Talk to Advisor</button>
+          </div>
+          <div class="wa-msg out" data-d="3">Hi Rohan, your site visit has been confirmed for Saturday at 11:30 AM.</div>
+          <div class="wa-msg out" data-d="4">Just a reminder about your site visit tomorrow at 11:30 AM.</div>
+          <div class="wa-msg out" data-d="5">Hi Rohan, it was a pleasure meeting you today. Would you like to receive the available 3 BHK options?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRM + PIPELINE -->
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head left reveal">
+      <div class="eyebrow">CRM &amp; Sales Pipeline</div>
+      <h2>Every lead, tracked from enquiry to booking.</h2>
+    </div>
+    <div class="crm-panel reveal">
+      <div class="crm-top"><span></span><span></span><span></span></div>
+      <div class="crm-body">
+        <div class="crm-side">
+          <a class="active">Dashboard</a><a>Leads</a><a>Properties</a><a>Site Visits</a>
+          <a>Follow-ups</a><a>Sales Pipeline</a><a>Agents</a><a>Reports</a><a>Settings</a>
+        </div>
+        <div class="crm-main">
+          <div class="crm-metrics">
+            <div class="m"><b>1,284</b><span>New Leads</span></div>
+            <div class="m"><b>428</b><span>Qualified</span></div>
+            <div class="m"><b>176</b><span>Site Visits</span></div>
+            <div class="m"><b>61</b><span>Negotiations</span></div>
+            <div class="m"><b>18</b><span>Bookings</span></div>
+          </div>
+          <div class="kanban">
+            <div class="kcol"><h4>New Lead</h4>
+              <div class="kcard"><b>Amit Jain</b><div class="kp">Meadows 24</div><div class="ka">Follow-up Due</div></div>
+            </div>
+            <div class="kcol"><h4>Qualified</h4>
+              <div class="kcard"><b>Priya Malhotra</b><div class="kp">Aarav Heights</div><div class="ka">Agent: Vikram Singh</div></div>
+            </div>
+            <div class="kcol"><h4>Site Visit</h4>
+              <div class="kcard"><b>Rohan Mehta</b><div class="kp">The Aravali</div><div class="ka">Agent: Ananya Sharma</div></div>
+            </div>
+            <div class="kcol"><h4>Negotiation</h4>
+              <div class="kcard"><b>Karan Bhatia</b><div class="kp">The Aravali</div><div class="ka">Agent: Ananya Sharma</div></div>
+            </div>
+            <div class="kcol"><h4>Booking</h4>
+              <div class="kcard"><b>Neha Kapoor</b><div class="kp">Aarav Heights</div><div class="ka">Agent: Vikram Singh</div></div>
+            </div>
+            <div class="kcol"><h4>Lost</h4>
+              <div class="kcard"><b>Suresh Rao</b><div class="kp">Meadows 24</div><div class="ka">Agent: Vikram Singh</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Automation Workflow</div>
+      <h2>What happens after someone enquires.</h2>
+    </div>
+    <div class="flow" id="flowList">
+      <div class="fstep"><div class="fdot">1</div><p>Website Enquiry</p></div>
+      <div class="fstep"><div class="fdot">2</div><p>Lead Created</p></div>
+      <div class="fstep"><div class="fdot">3</div><p>CRM Assigns Agent</p></div>
+      <div class="fstep"><div class="fdot">4</div><p>WhatsApp Confirmation</p></div>
+      <div class="fstep"><div class="fdot">5</div><p>Site Visit</p></div>
+      <div class="fstep"><div class="fdot">6</div><p>Reminder</p></div>
+      <div class="fstep"><div class="fdot">7</div><p>Follow-up</p></div>
+      <div class="fstep"><div class="fdot">8</div><p>Negotiation</p></div>
+      <div class="fstep"><div class="fdot">9</div><p>Booking</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="dark">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About Aarav Realty</div>
+      <h2>Built on architecture, trust and a decade of Indian homes.</h2>
+      <p class="muted" style="margin-top:18px;font-size:15px;line-height:1.7;max-width:420px">Aarav Realty designs residences around how Indian families actually live &mdash; considered layouts, quality construction and locations that hold their value.</p>
+    </div>
+    <div class="stat-row reveal">
+      <div class="stat"><b>18+</b><span>Years</span></div>
+      <div class="stat"><b>4,800+</b><span>Homes</span></div>
+      <div class="stat"><b>12</b><span>Cities</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section id="journal">
+  <div class="wrap">
+    <div class="sec-head left reveal">
+      <div class="eyebrow">Journal</div>
+      <h2>Notes on Indian real estate.</h2>
+    </div>
+    <div class="journal-grid">
+      <div class="jcard reveal"><span class="demo-tag">Demo article</span><h3>Why Golf Course Road Continues to Attract Premium Homebuyers</h3><p>A look at what keeps demand steady in Gurugram&rsquo;s most established corridor.</p></div>
+      <div class="jcard reveal"><span class="demo-tag">Demo article</span><h3>How Indian Families Are Rethinking Urban Living</h3><p>Multi-generational layouts, home offices and what buyers ask for now.</p></div>
+      <div class="jcard reveal"><span class="demo-tag">Demo article</span><h3>Choosing Between 2, 3 and 4 BHK Homes</h3><p>A practical framework for matching configuration to how you actually live.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Before You Visit</div>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>How do I schedule a site visit?</summary><p>Use the &ldquo;Book a Site Visit&rdquo; button, choose a residence, date and time, and an advisor will confirm on WhatsApp.</p></details>
+      <details><summary>What configurations are available?</summary><p>2, 3 and 4 BHK residences across our current projects in Gurugram, Noida and New Gurgaon.</p></details>
+      <details><summary>Can I request a floor plan?</summary><p>Yes &mdash; floor plans are shared after a quick enquiry so we can send the configuration that fits.</p></details>
+      <details><summary>How does the enquiry process work?</summary><p>Enquire on the site or WhatsApp, get matched with an advisor, then book a visit whenever it suits you.</p></details>
+      <details><summary>Can I speak to an advisor on WhatsApp?</summary><p>Yes &mdash; every enquiry gets an instant WhatsApp response, with a human advisor available on request.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Aarav Realty</div>
+        <p class="foot-tag">Building tomorrow&rsquo;s landmarks.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#projects">Projects</a><a href="#search">Residences</a><a href="#about">About</a><a href="#journal">Journal</a><a href="#faq">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a>Gurugram, Haryana, India</a>
+        <a>+91 98XXX XXXXX</a>
+        <a>hello@aaravrealty.example</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Aarav Realty is a fictional portfolio project.</span>
+      <a href="https://autopend.com/">Built by AutoPend &#8594; see the real service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* nav scroll state + mobile menu */
+const header = document.getElementById('siteHeader');
+addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40), { passive: true });
+const menuBtn = document.getElementById('menuBtn'), menuClose = document.getElementById('menuClose'), mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+menuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+/* hero line reveal + card entrance */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduced) {
+  document.querySelectorAll('#heroH1 .line span').forEach((el, i) => {
+    el.style.transition = 'transform .9s cubic-bezier(.2,.8,.2,1)';
+    el.style.transitionDelay = (.15 + i * .13) + 's';
+    requestAnimationFrame(() => requestAnimationFrame(() => el.style.transform = 'translateY(0)'));
+  });
+} else {
+  document.querySelectorAll('#heroH1 .line span').forEach(el => el.style.transform = 'none');
+}
+
+/* scroll reveal */
+const revealTargets = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+revealTargets.forEach(el => io.observe(el));
+
+/* workflow line draw */
+const flowIo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('drawn'); flowIo.unobserve(e.target); } }), { threshold: .4 });
+document.querySelectorAll('.fstep').forEach(el => flowIo.observe(el));
+
+/* whatsapp transcript staged reveal */
+const waEl = document.getElementById('waScreen');
+const waIo = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  waIo.unobserve(e.target);
+  e.target.querySelectorAll('[data-d]').forEach(m => {
+    setTimeout(() => m.classList.add('show'), Number(m.dataset.d) * 550);
+  });
+}), { threshold: .3 });
+waIo.observe(waEl);
+
+/* property data + search filter */
+const PROPS = document.querySelectorAll('#projGrid .pcard');
+document.getElementById('fSubmit').addEventListener('click', () => {
+  const loc = document.getElementById('fLocation').value;
+  const budget = document.getElementById('fBudget').value;
+  const cfg = document.getElementById('fConfig').value;
+  const status = document.getElementById('fStatus').value;
+  let [bMin, bMax] = budget === 'any' ? [0, 999999] : budget.split('-').map(Number);
+  let shown = 0;
+  PROPS.forEach(card => {
+    const okLoc = loc === 'any' || card.dataset.area === loc;
+    const okBudget = card.dataset.price >= bMin && card.dataset.price <= bMax;
+    const okCfg = cfg === 'any' || card.dataset.config.split(',').includes(cfg);
+    const okStatus = status === 'any' || card.dataset.status === status;
+    const match = okLoc && okBudget && okCfg && okStatus;
+    card.classList.toggle('hidden', !match);
+    if (match) shown++;
+  });
+  document.getElementById('resultsCount').textContent = `Showing ${shown} of ${PROPS.length} residences`;
+});
+
+/* booking wizard */
+(function () {
+  const steps = [...document.querySelectorAll('.bstep')];
+  const tabs = [...document.querySelectorAll('#bSteps span')];
+  let current = 1;
+  const state = { property: '', date: '', time: '' };
+
+  function show(n) {
+    current = n;
+    steps.forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+    tabs.forEach(t => {
+      const v = +t.dataset.s;
+      t.classList.toggle('active', v === n);
+      t.classList.toggle('done', v < n);
+    });
+  }
+
+  document.getElementById('bProperty').addEventListener('click', e => {
+    const opt = e.target.closest('.opt'); if (!opt) return;
+    document.querySelectorAll('#bProperty .opt').forEach(o => o.classList.remove('sel'));
+    opt.classList.add('sel'); state.property = opt.dataset.v;
+  });
+  document.getElementById('bDate').addEventListener('click', e => {
+    const c = e.target.closest('.chip'); if (!c) return;
+    document.querySelectorAll('#bDate .chip').forEach(o => o.classList.remove('sel'));
+    c.classList.add('sel'); state.date = c.dataset.v;
+  });
+  document.getElementById('bTime').addEventListener('click', e => {
+    const c = e.target.closest('.chip'); if (!c) return;
+    document.querySelectorAll('#bTime .chip').forEach(o => o.classList.remove('sel'));
+    c.classList.add('sel'); state.time = c.dataset.v;
+  });
+
+  document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => {
+    if (current === 1 && !state.property) return alert('Please select a residence.');
+    if (current === 2 && !state.date) return alert('Please choose a date.');
+    if (current === 4) return;
+    show(current + 1);
+    if (current === 4) updateSummary();
+  }));
+  document.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => show(current - 1)));
+
+  function updateSummary() {
+    document.getElementById('bSummary').innerHTML =
+      `<b>Property:</b> ${state.property || '&mdash;'}<br><b>Date:</b> ${state.date || '&mdash;'}<br><b>Time:</b> ${state.time || '&mdash;'}`;
+  }
+  document.getElementById('bTime').addEventListener('click', updateSummary);
+
+  document.getElementById('bSubmit').addEventListener('click', () => {
+    const name = document.getElementById('bName').value.trim();
+    const mobile = document.getElementById('bMobile').value.trim();
+    const email = document.getElementById('bEmail').value.trim();
+    if (!state.time) return alert('Please choose a time.');
+    if (!name || !mobile || !email) return alert('Please fill in your details.');
+    document.querySelector('.booking-steps').style.display = 'none';
+    steps.forEach(s => s.classList.remove('active'));
+    document.getElementById('bSuccess').classList.add('active');
+  });
+
+  document.getElementById('bReset').addEventListener('click', () => {
+    document.getElementById('bSuccess').classList.remove('active');
+    document.querySelector('.booking-steps').style.display = 'flex';
+    document.getElementById('bForm').reset();
+    document.querySelectorAll('.opt.sel,.chip.sel').forEach(o => o.classList.remove('sel'));
+    state.property = state.date = state.time = '';
+    show(1);
+    document.getElementById('projects').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+  });
+})();
+
+/* animated stat counters */
+if (!reduced) {
+  const stats = document.querySelectorAll('.stat b');
+  const statIo = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    statIo.unobserve(e.target);
+    const el = e.target, raw = el.textContent, num = parseInt(raw.replace(/[^\d]/g, ''), 10);
+    const suffix = raw.replace(/[\d,]/g, '');
+    let start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / 1200, 1);
+      el.textContent = Math.round(num * (1 - Math.pow(1 - p, 3))).toLocaleString('en-IN') + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }), { threshold: .5 });
+  stats.forEach(s => statIo.observe(s));
+}
+
+/* magnetic buttons (desktop, fine pointer only) */
+if (!reduced && matchMedia('(pointer:fine)').matches) {
+  import('https://cdn.jsdelivr.net/npm/motion@11/+esm').then(({ animate }) => {
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * .25;
+        const y = (e.clientY - r.top - r.height / 2) * .5;
+        animate(btn, { x, y }, { duration: .3 });
+      });
+      btn.addEventListener('mouseleave', () => animate(btn, { x: 0, y: 0 }, { type: 'spring', stiffness: 300, damping: 18 }));
+    });
+    document.querySelectorAll('.kcard').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const rx = ((e.clientY - r.top) / r.height - .5) * -8;
+        const ry = ((e.clientX - r.left) / r.width - .5) * 8;
+        animate(card, { rotateX: rx, rotateY: ry }, { duration: .25 });
+      });
+      card.addEventListener('mouseleave', () => animate(card, { rotateX: 0, rotateY: 0 }, { duration: .4 }));
+    });
+  }).catch(() => {});
+}
+</script>
+
+</body>
+</html>
