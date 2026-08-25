@@ -225,6 +225,22 @@ section{padding:96px 0}
 .pd a.visit:hover{text-decoration:underline}
 
 
+/* industry examples */
+.exgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.exgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.exgrid{grid-template-columns:1fr}}
+.excard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.excard:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(11,18,32,.10);border-color:#d5d9e0}
+.excard .tag{font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue)}
+.excard h3{font-size:20px;margin:10px 0 8px;letter-spacing:-.03em}
+.excard p{margin:0 0 16px;font-size:14px;line-height:1.55;color:var(--muted)}
+.excard .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.excard .chips span{background:#eef1f5;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:600;color:#344054}
+.excard .visit{margin-top:auto;font-weight:700;font-size:13px;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.excard:hover .visit{text-decoration:underline}
+.excard .study{margin-top:8px;font-size:12px;font-weight:600;color:var(--muted)}
+.excard .study:hover{color:var(--ink);text-decoration:underline}
+
 /* services carousel */
 .voice{border-radius:28px;background:radial-gradient(circle at 15% 20%,rgba(217,255,79,.08),transparent 45%),linear-gradient(155deg,#0b1220,#131c2c);color:#fff;position:relative;overflow:hidden}
 .carousel-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
@@ -352,6 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="navlinks">
     <a href="#process">Process</a>
     <a href="#work">Work</a>
+    <a href="#examples">Examples</a>
     <a href="#services">Services</a>
   </div>
   <a class="cta blue book-cta" href="#">Book Free Call</a>
@@ -422,7 +439,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-head left">
       <div class="eyebrow">Real work</div>
       <h2>Businesses running on what we built.</h2>
-      <p>Curious what this looks like for your industry? See a <a href="/realestate/" style="color:var(--lime);font-weight:700">real estate example &#8594;</a></p>
+      <p>Curious what this looks like for your industry? Browse <a href="#examples" style="color:var(--lime);font-weight:700">five industry examples &#8594;</a></p>
     </div>
 
     <div class="project">
@@ -487,6 +504,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- INDUSTRY EXAMPLES -->
+<section id="examples">
+  <div class="wrap">
+    <div class="sec-head left">
+      <div class="eyebrow">Industry examples</div>
+      <h2>See it working in your industry.</h2>
+      <p>Complete demonstration builds &mdash; website, CRM, automation and day-to-day operations &mdash; one per industry. Every brand below is fictional and the data is sample content, but the software is real and clickable.</p>
+    </div>
+
+    <div class="exgrid">
+
+      <div class="excard">
+        <div class="tag">01 &middot; Real estate</div>
+        <h3>Aarav Realty</h3>
+        <p>Premium residences across Gurugram and Noida &mdash; property discovery, site-visit booking and the sales pipeline behind them.</p>
+        <div class="chips"><span>Property discovery</span><span>Site-visit booking</span><span>Sales CRM</span><span>WhatsApp automation</span></div>
+        <a class="visit" href="https://aarav-realty.onrender.com" target="_blank" rel="noopener">Open live demo &#8599;</a>
+        <a class="study" href="/realestate/">Read the case study &#8594;</a>
+      </div>
+
+      <div class="excard">
+        <div class="tag">02 &middot; Education</div>
+        <h3>Pragati Academy</h3>
+        <p>NEET, JEE and UPSC coaching in Lucknow &mdash; every enquiry tracked from first call to enrolled, mentored student.</p>
+        <div class="chips"><span>Admissions CRM</span><span>Counsellor dashboard</span><span>Student portal</span><span>WhatsApp automation</span></div>
+        <a class="visit" href="https://pragatieducation.netlify.app" target="_blank" rel="noopener">Open live demo &#8599;</a>
+      </div>
+
+      <div class="excard">
+        <div class="tag">03 &middot; Healthcare</div>
+        <h3>Nivara Dental Studio</h3>
+        <p>Cosmetic, preventive and restorative dental care in Bandra, Mumbai &mdash; treatments, appointments and patient records in one place.</p>
+        <div class="chips"><span>Appointment booking</span><span>Patient CRM</span><span>Treatment catalogue</span><span>WhatsApp reminders</span></div>
+        <a class="visit" href="https://daantkaaspatal.netlify.app" target="_blank" rel="noopener">Open live demo &#8599;</a>
+      </div>
+
+      <div class="excard">
+        <div class="tag">04 &middot; Hospitality</div>
+        <h3>Aaranya Retreat</h3>
+        <p>A secluded luxury forest retreat in Coorg &mdash; rooms, reservations and guest care handled end to end.</p>
+        <div class="chips"><span>Room booking</span><span>Guest CRM</span><span>WhatsApp concierge</span><span>Operations</span></div>
+        <a class="visit" href="https://aaranya-forest-resort.netlify.app" target="_blank" rel="noopener">Open live demo &#8599;</a>
+      </div>
+
+      <div class="excard">
+        <div class="tag">05 &middot; Manufacturing</div>
+        <h3>Shree Vardhan Industries</h3>
+        <p>Precision industrial components from Ahmedabad &mdash; one platform from first B2B enquiry to dispatched shipment.</p>
+        <div class="chips"><span>B2B CRM</span><span>Inventory ERP</span><span>Production management</span><span>Dealer portal</span></div>
+        <a class="visit" href="https://manufacturingb2b.netlify.app" target="_blank" rel="noopener">Open live demo &#8599;</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
