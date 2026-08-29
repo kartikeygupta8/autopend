@@ -1,0 +1,44 @@
+:root{--ink:#0b1220;--muted:#667085;--line:#e7e9ed;--bg:#f8f9fb;--blue:#155eef;--navy:#0b1220;--max:820px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.65}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:auto;padding:0 24px}
+h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.03em;margin:0}
+
+header.site{position:sticky;top:0;z-index:50;background:rgba(248,249,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.site .wrap{max-width:1120px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand img{height:30px;width:auto;mix-blend-mode:multiply}
+.brand span{font:800 19px Manrope;letter-spacing:-.03em}
+.back{font-size:13px;font-weight:600;color:var(--muted)}
+.back:hover{color:var(--ink)}
+
+main{padding:56px 0 80px}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.08;margin-bottom:14px}
+.updated{font-size:13px;color:var(--muted);margin-bottom:10px}
+.lede{font-size:17px;color:#344054;margin:0 0 40px}
+
+h2{font-size:21px;margin:44px 0 12px;padding-top:22px;border-top:1px solid var(--line)}
+h2:first-of-type{border-top:none;padding-top:0}
+h3{font-size:16px;margin:26px 0 8px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+strong{font-weight:700}
+
+table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:#eef1f5;white-space:nowrap}
+
+.callout{background:#fff;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:10px;padding:16px 18px;margin:0 0 20px;font-size:15px}
+.callout p:last-child{margin-bottom:0}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:12.5px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer a{font-weight:600;color:var(--ink)}
+@media(max-width:600px){main{padding:36px 0 56px}}
