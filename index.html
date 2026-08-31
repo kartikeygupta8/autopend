@@ -104,7 +104,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
 :root{--ink:#0b1220;--muted:#667085;--line:#e7e9ed;--bg:#f8f9fb;--blue:#155eef;--lime:#d9ff4f;--navy:#0b1220;--max:1120px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}
@@ -160,7 +159,7 @@ section{padding:96px 0}
 .booking-card{background:var(--navy);border-radius:24px;padding:22px;color:#fff}
 .booking-card h2{font-size:21px;line-height:1.2;margin:0}
 .booking-card p.sub{font-size:12px;color:#aab3c2;margin:8px 0 16px;line-height:1.5}
-.cal-wrap{background:#fff;border-radius:14px;overflow:hidden;min-height:440px}
+.wa-big{display:flex;justify-content:center;width:100%;padding:15px 18px;font-size:14.5px;margin-top:4px}
 .cal-fallback{margin-top:10px;font-size:10.5px;color:#8a96ab;text-align:center}
 .cal-fallback a{color:var(--lime);font-weight:700}
 
@@ -375,7 +374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#examples">Examples</a>
     <a href="#services">Services</a>
   </div>
-  <a class="cta blue book-cta" href="#">Book Free Call</a>
+  <a class="cta blue book-cta" href="#">WhatsApp Us</a>
 </nav>
 </header>
 
@@ -389,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1>Run your business.<br>We'll handle the systems.</h1>
       <p class="lead">Websites, WhatsApp automation, AI calling and the software that runs your operations &mdash; built and managed by one team.</p>
       <div class="hero-actions">
-        <a class="cta blue book-cta" href="#">Book a Free Business Review Call &#8594;</a>
+        <a class="cta blue book-cta" href="#">Get a Free Business Review &#8594;</a>
         <a class="cta outline" href="#work">See the work &#8595;</a>
       </div>
       <div class="trust-list">
@@ -397,15 +396,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span>&#10003; <b>7+ years</b> experience</span>
         <span>&#10003; <b>India-wide</b></span>
       </div>
-      <p class="wa-line">Prefer WhatsApp? <a href="https://wa.me/917985605973" target="_blank" rel="noopener">Message us directly &#8594;</a></p>
+      <p class="wa-line">Prefer WhatsApp? <a href="https://wa.me/917814175472?text=Hi%20AutoPend%2C%20I%27d%20like%20to%20know%20more%20about%20what%20you%20can%20build%20for%20my%20business." target="_blank" rel="noopener">Message us directly &#8594;</a></p>
     </div>
 
     <div class="booking-card" id="book">
-      <div class="eyebrow" style="color:#8a96ab">Book directly</div>
-      <h2>Choose a time. We'll take it from there.</h2>
-      <p class="sub">30 minutes, online, free &mdash; no obligation.</p>
-      <div class="cal-wrap"><div class="calendly-inline-widget" data-url="https://calendly.com/kartikeygupta8/review-meeting" style="min-width:260px;height:440px"></div></div>
-      <p class="cal-fallback">Calendar not loading? <a href="https://calendly.com/kartikeygupta8/review-meeting" target="_blank" rel="noopener">Open it directly &#8594;</a></p>
+      <div class="eyebrow" style="color:#8a96ab">Talk to us</div>
+      <h2>Message us on WhatsApp.</h2>
+      <p class="sub">Tell us what you're working on. We usually reply the same day &mdash; free, no obligation.</p>
+      <a class="cta lime wa-big" href="https://wa.me/917814175472?text=Hi%20AutoPend%2C%20I%27d%20like%20to%20know%20more%20about%20what%20you%20can%20build%20for%20my%20business." target="_blank" rel="noopener">Message us on WhatsApp &#8594;</a>
+      <p class="cal-fallback">Or save our number: <a href="tel:+917814175472">+91 78141 75472</a></p>
     </div>
   </div>
 
@@ -740,7 +739,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="finalcta">
       <h2>Ready to stop doing this by hand?</h2>
       <p>30 minutes. Free. No obligation. We'll tell you honestly what's worth building.</p>
-      <a class="cta lime book-cta" href="#">Book a Free Business Review Call &#8594;</a>
+      <a class="cta lime book-cta" href="#">Get a Free Business Review &#8594;</a>
     </div>
   </div>
 </section>
@@ -754,19 +753,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
-const BOOKING_URL = 'https://calendly.com/kartikeygupta8/review-meeting';
+// Every "book a call" button opens a WhatsApp chat with a message already
+// drafted, so the lead only has to hit send.
+const BOOKING_URL = 'https://wa.me/917814175472?text=Hi%20AutoPend%2C%20I%27d%20like%20to%20know%20more%20about%20what%20you%20can%20build%20for%20my%20business.';
 document.querySelectorAll('.book-cta').forEach(el => {
   el.href = BOOKING_URL;
   el.target = '_blank';
   el.rel = 'noopener';
-  el.addEventListener('click', function(e){
-    if (window.Calendly) {
-      e.preventDefault();
-      Calendly.initPopupWidget({ url: BOOKING_URL });
-    }
-  });
 });
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
