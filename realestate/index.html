@@ -294,6 +294,34 @@ footer{background:var(--espresso);color:var(--cream);padding:56px 0 26px;positio
 .foot-bottom{padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--taupe)}
 .foot-bottom a{color:var(--clay-light);font-weight:700}
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1602587951437019');
+fbq('track', 'PageView');
+
+// This page is a DEMO of what we build, not a page that sells anything. Its
+// booking form is a mock -- it calls reset() and stores nothing -- so it must
+// never fire Lead. Somebody reading the portfolio is real interest though,
+// and that is what ViewContent is for.
+fbq('track', 'ViewContent', {
+  content_name: 'realestate_demo',
+  content_category: 'autopend_portfolio'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1602587951437019&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

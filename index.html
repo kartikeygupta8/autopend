@@ -810,5 +810,69 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 })();
 </script>
 
+
+<script>
+// Meta Pixel events.
+//
+// Every conversion on this site is a click that LEAVES it -- WhatsApp, phone,
+// email. There is no form to submit, so PageView on its own reports a visit
+// and nothing about whether it was worth anything. These are the events that
+// tell the difference.
+//
+// Delegated from document because the .book-cta links get their href assigned
+// at runtime further down this file; a listener bound per-element at load
+// would miss them.
+(function () {
+  if (typeof fbq !== 'function') return;   // blocked by an ad blocker: do nothing
+
+  // A pixel event and its Conversions API twin dedupe on a shared id. Nothing
+  // sends the server-side half yet, but events without an id cannot be
+  // deduped retrospectively, so they get one now.
+  const eid = () => 'w' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+
+  // A double-tap on a phone link is one intent, not two.
+  const seen = new Set();
+  function send(event, name, id) {
+    if (seen.has(name)) return;
+    seen.add(name);
+    setTimeout(() => seen.delete(name), 2000);
+    fbq('track', event, { content_name: name, content_category: 'autopend_site' },
+        { eventID: id || eid() });
+  }
+
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+
+    // The primary call to action. Someone arriving here from an ad and
+    // opening WhatsApp with our message pre-drafted is the outcome the ad
+    // was bought for, so it is a Lead and not merely a Contact.
+    if (a.classList.contains('wa-big') || a.classList.contains('book-cta')) {
+      send('Lead', 'whatsapp_primary_cta');
+      return;
+    }
+    if (href.indexOf('wa.me') > -1)     return send('Contact', 'whatsapp_inline');
+    if (href.indexOf('tel:') === 0)     return send('Contact', 'phone');
+    if (href.indexOf('mailto:') === 0)  return send('Contact', 'email');
+  }, true);
+
+  // Reaching the services section means they read past the hero. It is the
+  // cheapest honest signal that a click was not a bounce, and it gives Meta
+  // something to optimise towards on traffic campaigns.
+  const svc = document.getElementById('services');
+  if (svc && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.disconnect();
+        send('ViewContent', 'services');
+      });
+    }, { threshold: 0.4 });
+    io.observe(svc);
+  }
+})();
+</script>
+
 </body>
 </html>
