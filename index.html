@@ -845,11 +845,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     if (!a) return;
     const href = a.getAttribute('href') || '';
 
-    // The primary call to action. Someone arriving here from an ad and
-    // opening WhatsApp with our message pre-drafted is the outcome the ad
-    // was bought for, so it is a Lead and not merely a Contact.
+    // The primary call to action. Tapping it only opens WhatsApp with our
+    // message pre-drafted, which is a Contact. The Lead is the chat that then
+    // starts, and the server reports that to Meta (Conversions API).
     if (a.classList.contains('wa-big') || a.classList.contains('book-cta')) {
-      send('Lead', 'whatsapp_primary_cta');
+      send('Contact', 'whatsapp_primary_cta');
       return;
     }
     if (href.indexOf('wa.me') > -1)     return send('Contact', 'whatsapp_inline');
