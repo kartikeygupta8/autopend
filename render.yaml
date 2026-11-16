@@ -12,19 +12,19 @@ services:
     routes:
       - type: redirect
         source: /automation
-        destination: /
+        destination: /whatsapp-automation/
         statusCode: 301
       - type: redirect
         source: /automation/*
-        destination: /
+        destination: /whatsapp-automation/
         statusCode: 301
       - type: redirect
         source: /webdev
-        destination: /
+        destination: /websites/
         statusCode: 301
       - type: redirect
         source: /webdev/*
-        destination: /
+        destination: /websites/
         statusCode: 301
       - type: rewrite
         source: /*

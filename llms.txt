@@ -9,6 +9,14 @@
 - AI voice agent that calls leads, follows up automatically, and books meetings.
 - ERP / CRM / Inventory management software for MSMEs, with role-based access and an AI layer that summarises business activity daily and monthly, with full context of everything shared with it.
 
+## Pages and pricing (INR, excluding GST, starting prices)
+
+- [Websites](https://autopend.com/websites/) from 7,999 one-time.
+- [WhatsApp AI agent](https://autopend.com/whatsapp-automation/) from 1,500 per month, by number of leads.
+- [AI voice agent](https://autopend.com/ai-voice-agent/) from 3,999 per month plus setup.
+- [ERP for wholesalers](https://autopend.com/erp-crm/) from 5,000 per month; ERP + AI agent 5,500; ERP + Collect 7,000.
+- [Pricing overview](https://autopend.com/pricing/) and [live demos](https://autopend.com/demo/): WhatsApp agent, Collect, ERP.
+
 ## Process
 
 Free review call → quotation → plan finalised → implementation → testing → launch → ongoing management.
